@@ -1,0 +1,13 @@
+﻿<!--{**-->
+<!--These xml blocks include string resources for the Rate and Review feature.-->
+<!--**}-->
+
+<root>
+  <!--^^-->
+  <!--{[{-->
+  <data name="RateReview_Link.Content" xml:space="preserve">
+    <value>Rate and Review</value>
+    <comment>Displayed as the link to launching the rate and review dialog.</comment>
+  </data>
+  <!--}]}-->
+</root>

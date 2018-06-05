@@ -1,0 +1,18 @@
+﻿<Page
+    mc:Ignorable="d">
+    <Grid Margin="{StaticResource MediumLeftRightMargin}">
+        <StackPanel
+            x:Name="ContentArea">
+            <StackPanel Margin="{StaticResource EightTopMargin}">
+                <!--^^-->
+                <!--{[{-->
+
+                <HyperlinkButton
+                    x:Uid="RateReview_Link"
+                    Click="RateReviewLink_Click"
+                    Margin="{StaticResource EightTopMargin}" />
+                <!--}]}-->
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
