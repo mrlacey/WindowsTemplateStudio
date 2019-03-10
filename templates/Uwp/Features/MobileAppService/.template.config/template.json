@@ -47,9 +47,9 @@
       "manualInstructions": [ ],
       "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
       "args": {
-        "packageId" : "Microsoft.EntityFrameworkCore.SqlServer",
-        "version" : "2.2.2",
-        "projectPath": "Param_ProjectName.Core\\Param_ProjectName.Core.csproj"
+        "packageId" : "Microsoft.AspNetCore.All",
+        "version" : "2.0.8",
+        "projectPath": "Param_ProjectName.MobileAppService\\Param_ProjectName.MobileAppService.csproj"
       },
       "continueOnError": "true"
     },
@@ -58,9 +58,20 @@
       "manualInstructions": [ ],
       "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
       "args": {
-        "packageId" : "System.Configuration.ConfigurationManager",
-        "version" : "4.5.0",
-        "projectPath": "Param_ProjectName.Core\\Param_ProjectName.Core.csproj"
+        "packageId" : "Microsoft.NETCore.App",
+        "version" : "2.0.0",
+        "projectPath": "Param_ProjectName.MobileAppService\\Param_ProjectName.MobileAppService.csproj"
+      },
+      "continueOnError": "true"
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Swashbuckle.AspNetCore",
+        "version" : "2.4.0",
+        "projectPath": "Param_ProjectName.MobileAppService\\Param_ProjectName.MobileAppService.csproj"
       },
       "continueOnError": "true"
     }
