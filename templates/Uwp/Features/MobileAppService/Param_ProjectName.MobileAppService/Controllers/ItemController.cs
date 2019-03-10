@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 
+using Param_RootNamespace.Core.Models;
 using Param_RootNamespace.Models;
+
 
 namespace Param_RootNamespace.Controllers
 {

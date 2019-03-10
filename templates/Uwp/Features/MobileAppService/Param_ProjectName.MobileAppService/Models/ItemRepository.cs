@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using Param_RootNamespace.Core.Models;
 
 namespace Param_RootNamespace.Models
 {
