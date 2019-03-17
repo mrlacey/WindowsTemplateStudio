@@ -1,0 +1,91 @@
+TAB: Matt's Demo
+
+- Connection string
+
+                return @"Data Source=MATT-SBOOK2\SQLEXPRESS;Initial Catalog=NORTHWIND; User Id=uwp;Password=mvpdemo";
+
+
+- GetProducts()
+        public static ObservableCollection<Product> GetProducts()
+        {
+            const string GetProductsQuery = "select ProductID, ProductName, QuantityPerUnit," +
+                                            " UnitPrice, UnitsInStock, Products.CategoryID " +
+                                            " from Products inner join Categories on Products.CategoryID = Categories.CategoryID " +
+                                            " where Discontinued = 0";
+
+            var products = new ObservableCollection<Product>();
+            try
+            {
+                using (var conn = new SqlConnection(GetConnectionString()))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = GetProductsQuery;
+                            using (var reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    var product = new Product
+                                    {
+                                        ProductID = reader.GetInt32(0),
+                                        ProductName = reader.GetString(1),
+                                        QuantityPerUnit = reader.GetString(2),
+                                        UnitPrice = reader.GetDecimal(3),
+                                        UnitsInStock = reader.GetInt16(4),
+                                        CategoryId = reader.GetInt32(5)
+                                    };
+                                    products.Add(product);
+                                }
+                            }
+                        }
+                    }
+                }
+                return products;
+            }
+            catch (Exception eSql)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception: " + eSql.Message);
+            }
+            return null;
+        }
+
+- Product class
+
+    public class Product
+    {
+        public int ProductID { get; set; }
+        public string ProductCode { get { return ProductID.ToString(); } }
+        public string ProductName { get; set; }
+        public string QuantityPerUnit { get; set; }
+        public decimal UnitPrice { get; set; }
+        public string UnitPriceString { get { return UnitPrice.ToString("######.00"); } }
+        public int UnitsInStock { get; set; }
+        public string UnitsInStockString { get { return UnitsInStock.ToString("#####0"); } }
+        public int CategoryId { get; set; }
+    }
+
+- MainViewModel
+
+        public MainViewModel()
+        {
+            this.http = new HttpDataService();
+        }
+
+        public async Task InitializeAsync()
+        {
+            var resp = await http.GetAsync<Rootobject>("https://randomuser.me/api/");
+
+            this.User = resp.results[0];
+        }
+
+- MainPage OnNavTo
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            await this.ViewModel.InitializeAsync();
+        }
+
