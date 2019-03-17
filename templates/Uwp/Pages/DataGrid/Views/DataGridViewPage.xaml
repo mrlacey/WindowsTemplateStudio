@@ -10,34 +10,32 @@
     <Grid
         x:Name="ContentArea"
         Margin="{StaticResource SmallLeftRightMargin}">
-        <Grid>
-            <controls:DataGrid
-                ItemsSource="{x:Bind ViewModel.Source}"
-                AutoGenerateColumns="False"
-                GridLinesVisibility="Horizontal">
-                <controls:DataGrid.Columns>
-                    <!--TODO WTS:
-                    Remove this column definitions and define columns for your data.
-                    Consider adding header properties to Resources.resw-->
-                    <controls:DataGridTextColumn Header="OrderId" Binding="{Binding OrderId}" />
-                    <controls:DataGridTextColumn Header="OrderDate" Binding="{Binding OrderDate}"  />
-                    <controls:DataGridTextColumn Header="Company" Binding="{Binding Company}" />
-                    <controls:DataGridTextColumn Header="ShipTo" Binding="{Binding ShipTo}" />
-                    <controls:DataGridTextColumn Header="OrderTotal" Binding="{Binding OrderTotal}" />
-                    <controls:DataGridTextColumn Header="Status" Binding="{Binding Status}"  />
-                    <controls:DataGridTemplateColumn Header="Symbol">
-                        <controls:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate x:DataType="model:SampleOrder">
-                                <FontIcon
-                                HorizontalAlignment="Left"
-                                Margin="{StaticResource SmallLeftRightMargin}"
-                                FontFamily="{ThemeResource SymbolThemeFontFamily}"
-                                Glyph="{x:Bind Symbol}" />
-                            </DataTemplate>
-                        </controls:DataGridTemplateColumn.CellTemplate>
-                    </controls:DataGridTemplateColumn>
-                </controls:DataGrid.Columns>
-            </controls:DataGrid>
-        </Grid>
+        <controls:DataGrid
+            ItemsSource="{x:Bind ViewModel.Source}"
+            AutoGenerateColumns="False"
+            GridLinesVisibility="Horizontal">
+            <controls:DataGrid.Columns>
+                <!--TODO WTS:
+                Remove this column definitions and define columns for your data.
+                Consider adding header properties to Resources.resw-->
+                <controls:DataGridTextColumn Header="OrderId" Binding="{Binding OrderId}" />
+                <controls:DataGridTextColumn Header="OrderDate" Binding="{Binding OrderDate}"  />
+                <controls:DataGridTextColumn Header="Company" Binding="{Binding Company}" />
+                <controls:DataGridTextColumn Header="ShipTo" Binding="{Binding ShipTo}" />
+                <controls:DataGridTextColumn Header="OrderTotal" Binding="{Binding OrderTotal}" />
+                <controls:DataGridTextColumn Header="Status" Binding="{Binding Status}"  />
+                <controls:DataGridTemplateColumn Header="Symbol">
+                    <controls:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="model:SampleOrder">
+                            <FontIcon
+                            HorizontalAlignment="Left"
+                            Margin="{StaticResource SmallLeftRightMargin}"
+                            FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                            Glyph="{x:Bind Symbol}" />
+                        </DataTemplate>
+                    </controls:DataGridTemplateColumn.CellTemplate>
+                </controls:DataGridTemplateColumn>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
     </Grid>
 </Page>
