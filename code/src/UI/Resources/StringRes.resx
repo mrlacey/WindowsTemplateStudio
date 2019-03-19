@@ -730,4 +730,7 @@ Please verify the following list of packages needed by your project's code and m
   <data name="TemplateGroup_Data" xml:space="preserve">
     <value>Data</value>
   </data>
+  <data name="TemplateGroup_Experimental" xml:space="preserve">
+    <value>Xperimental</value>
+  </data>
 </root>

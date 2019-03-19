@@ -1261,6 +1261,15 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Xperimental.
+        /// </summary>
+        public static string TemplateGroup_Experimental {
+            get {
+                return ResourceManager.GetString("TemplateGroup_Experimental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Testing.
         /// </summary>
         public static string TemplateGroup_Testing {
