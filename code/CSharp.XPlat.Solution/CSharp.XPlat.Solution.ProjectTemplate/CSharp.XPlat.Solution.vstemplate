@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>CSharp.XPlat.Solution Project</Name>
+    <Description>A template for creating a CSharp.XPlat.Solution project.</Description>
+    <Icon>CSharp.XPlat.Solution.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <SortOrder>1</SortOrder>
+    <TemplateID>{dd0dcdd1-bf6d-48c9-b834-0f29686a5195}</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CSharp.XPlat.Solution</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="CSharp.XPlat.Solution.csproj" ReplaceParameters="true">
+      <!-- 
+      These are the items which will show up when a new project is created using the custom project system.
+      Items referenced in here must also be referenced in the project file.
+      -->
+      <ProjectItem OpenInEditor="true">Start.js</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
