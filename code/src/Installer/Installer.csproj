@@ -517,6 +517,13 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectTemplates\CSharp.XPlat.Solution\CSharp.XPlat.Solution.csproj">
+      <Project>{4811CCE2-43B6-4CCA-962D-F6E1840F00E0}</Project>
+      <Name>CSharp.XPlat.Solution</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectTemplates\VBNet.UWP.Solution\VBNet.UWP.Solution.csproj">
       <Project>{2b997e0a-16c8-4b8e-810a-d1d7dafbd760}</Project>
       <Name>VBNet.UWP.Solution</Name>
