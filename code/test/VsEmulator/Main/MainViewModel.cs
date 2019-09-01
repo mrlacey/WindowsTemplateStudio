@@ -81,6 +81,8 @@ namespace Microsoft.Templates.VsEmulator.Main
 
         public RelayCommand NewUwpVisualBasicProjectCommand => new RelayCommand(NewUwpVisualBasicProject);
 
+        public RelayCommand NewXplatCSharpProjectCommand => new RelayCommand(NewXplatCSharpProject);
+
         public RelayCommand LoadProjectCommand => new RelayCommand(LoadProject);
 
         public RelayCommand RefreshTemplateCacheCommand => _refreshTemplateCacheCommand ?? (_refreshTemplateCacheCommand = new RelayCommand(
@@ -136,7 +138,14 @@ namespace Microsoft.Templates.VsEmulator.Main
             });
         }
 
-
+        private void NewXplatCSharpProject()
+        {
+            SafeThreading.JoinableTaskFactory.Run(async () =>
+            {
+                await SafeThreading.JoinableTaskFactory.SwitchToMainThreadAsync();
+                await NewProjectAsync(Platforms.XPlat, ProgrammingLanguages.CSharp);
+            });
+        }
 
         private void AnalyzeCSharpSelection()
         {
