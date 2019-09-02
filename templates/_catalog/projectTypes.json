@@ -38,5 +38,25 @@
       "licenses": "[Windows UI Library](https://aka.ms/winui_license)",
       "platforms": [ "Uwp" ],
       "languages": [ "C#", "VisualBasic" ]
+    },
+    {
+      "name": "XamarinForms",
+      "displayName": "Xamarin.Forms",
+      "summary": "A complete cross-platform UI toolkit for .NET developers.",
+      "author": "Microsoft Community",
+      "order": "1",
+      "licenses": "[Windows UI Library](https://aka.ms/winui_license)",
+      "platforms": [ "Xplat" ],
+      "languages": [ "C#" ]
+    },
+    {
+      "name": "Uno",
+      "displayName": "Uno Platform",
+      "summary": "Build Mobile, Desktop and WebAssembly apps with C# and XAML.",
+      "author": "Microsoft Community",
+      "order": "2",
+      "licenses": "",
+      "platforms": [ "Xplat" ],
+      "languages": [ "C#" ]
     }
 ]
