@@ -443,6 +443,7 @@ namespace Microsoft.Templates.VsEmulator.Main
 
         private void SetCurrentPlatform(string platform)
         {
+            GenContext.SetCurrentPlatform(platform);
             var fakeShell = GenContext.ToolBox.Shell as FakeGenShell;
             fakeShell.SetCurrentPlatform(platform);
         }

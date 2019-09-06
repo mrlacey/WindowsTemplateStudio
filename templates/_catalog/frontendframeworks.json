@@ -88,5 +88,15 @@
         "licenses": "",
         "platforms": ["Xplat"],
         "languages": [ "C#" ]
+    },
+    {
+        "name": "xNavView",
+        "displayName": "NavView",
+        "summary": "A navigation pane (or 'hamburger menu') is included for navigation between pages.",
+        "author": "Microsoft Community",
+        "order": "5",
+        "licenses": "",
+        "platforms": ["Xplat"],
+        "languages": [ "C#" ]
     }
 ]
