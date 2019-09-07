@@ -24,7 +24,7 @@
   "PrimaryOutputs":
   [
     { "path": "Param_ProjectName.Core/Param_ProjectName.Core.csproj" },
-    { "path": "Param_ProjectName/xts.DefaultProject.csproj" }
+    { "path": "Param_ProjectName.UWP/xts.DefaultProject.UWP.csproj" }
   ],
   "symbols":
   {
@@ -97,17 +97,7 @@
       "args": {
         "packageId" : "Microsoft.Xaml.Behaviors.Uwp.Managed",
         "version" : "2.0.1",
-        "projectPath": "Param_ProjectName.csproj"
-      },
-      "continueOnError": true
-    },
-    {
-      "description": "Add reference to this project in main UWP app",
-      "manualInstructions": [ ],
-      "actionId": "849AAEB8-487D-45B3-94B9-77FA74E83A01",
-      "args": {
-        "fileIndex" : "0",
-        "projectPath": "Param_ProjectName\\Param_ProjectName.csproj"
+        "projectPath": "Param_ProjectName.UWP/Param_ProjectName.UWP.csproj"
       },
       "continueOnError": true
     }
