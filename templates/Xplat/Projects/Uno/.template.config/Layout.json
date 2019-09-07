@@ -1,14 +1,8 @@
 ﻿[
     {
-        "name": "UnoMain",
+        "name": "Main",
         "templateGroupIdentity": "xts.Uno.Page.Blank",
         "readonly": "false",
         "projecttype": "Uno"
-    },
-    {
-        "name": "XfMain",
-        "templateGroupIdentity": "xts.xf.Page.Blank",
-        "readonly": "false",
-        "projecttype": "XamarinForms"
     }
 ]

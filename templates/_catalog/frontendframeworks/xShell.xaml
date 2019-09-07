@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Width="48" Height="48">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources/>
+            <Path Data="M33,31 L44,31 44,33 33,33 z M17,31 L28,31 28,33 17,33 z M5,26 L9,26 9,30 5,30 z M5,19 L9,19 9,23 5,23 z M5,12 L9,12 9,16 5,16 z M5,5 L9,5 9,9 5,9 z M14,2 L14,36 46,36 46,2 z M2,2 L2,36 12,36 12,2 z M0,0 L13,0 48,0 48,38 0,38 z" Fill="#FF000000" Height="38" Stretch="Fill" Canvas.Top="4" Width="48"/>
+  </Canvas>
+</Viewbox>

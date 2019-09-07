@@ -2,16 +2,13 @@
 <!--This file is NOT compatible with Silverlight-->
 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
   <Canvas Name="svg3954" Width="48" Height="48">
-    <Canvas.RenderTransform>
-      <TranslateTransform X="0" Y="0"/>
-    </Canvas.RenderTransform>
-    <Canvas.Resources/>
-    <!--Unknown tag: metadata-->
-    <!--Unknown tag: sodipodi:namedview-->
-    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path3952" Fill="#000000">
-      <Path.Data>
-        <PathGeometry Figures="M48 42H0V4H48ZM2 40H46V6H2Z" FillRule="NonZero"/>
-      </Path.Data>
-    </Path>
+      <Canvas.RenderTransform>
+        <MatrixTransform Matrix="0.16611234 0 0 0.16611234 -9.7106373 -9.1873178"/>
+      </Canvas.RenderTransform>
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path0" Fill="#FF000000">
+        <Path.Data>
+          <PathGeometry Figures="m 140.578 90.485 c -6.44 2.295 -8.356 5.115 -35.669 52.515 -33.228 57.663 -32.214 55.328 -28.024 64.552 4.639 10.213 54.528 95.25 57.567 98.125 5.513 5.215 6.714 5.312 65.548 5.312 58.832 0 60.028 -0.097 65.557 -5.312 3.096 -2.921 51.347 -85.095 57.059 -97.177 4.819 -10.192 6.093 -7.156 -27.49 -65.5 C 268.181 96.189 265.271 92.002 258.344 90.079 252.072 88.337 145.575 88.705 140.578 90.485 m 43.346 80.033 c 8.484 15.115 15.733 27.482 16.11 27.482 0.377 0 7.603 -12.375 16.057 -27.5 L 231.462 143 h 10.71 c 6.325 0 10.973 0.425 11.352 1.038 0.353 0.571 -6.146 13.147 -14.441 27.945 -8.296 14.799 -15.083 27.376 -15.083 27.949 0 0.573 6.787 13.181 15.082 28.018 8.295 14.837 14.793 27.443 14.441 28.013 -0.378 0.612 -5.035 1.037 -11.351 1.037 h -10.71 L 216.091 229.5 C 207.637 214.375 200.394 202 199.996 202 c -0.397 0 -7.647 12.378 -16.109 27.507 l -15.387 27.508 -11 -0.258 c -13.78 -0.322 -14.127 2.328 3.884 -29.653 8.039 -14.273 14.616 -26.435 14.616 -27.026 0 -0.591 -6.784 -13.213 -15.076 -28.049 -8.291 -14.836 -14.79 -27.437 -14.441 -28.002 0.372 -0.601 5.07 -1.02 11.326 -1.009 l 10.691 0.018 15.424 27.482" />
+        </Path.Data>
+      </Path>
   </Canvas>
 </Viewbox>

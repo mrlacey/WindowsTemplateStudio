@@ -45,7 +45,6 @@
       "summary": "A complete cross-platform UI toolkit for .NET developers.",
       "author": "Microsoft Community",
       "order": "1",
-      "licenses": "[Windows UI Library](https://aka.ms/winui_license)",
       "platforms": [ "Xplat" ],
       "languages": [ "C#" ]
     },
