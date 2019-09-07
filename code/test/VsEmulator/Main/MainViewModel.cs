@@ -246,6 +246,8 @@ namespace Microsoft.Templates.VsEmulator.Main
         private void AnalyzeNewProject(string platform, string language)
         {
             SetCurrentLanguage(language);
+            SetCurrentPlatform(platform);
+
             try
             {
                 var newProjectName = "AnalyzeSelection" + Path.GetFileNameWithoutExtension(Path.GetTempFileName());
