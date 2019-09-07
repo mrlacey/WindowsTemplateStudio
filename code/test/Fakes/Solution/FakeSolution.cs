@@ -226,6 +226,8 @@ EndProject
             {
                 case Platforms.Uwp:
                     return File.ReadAllText(@"Solution\UwpSolutionTemplate.txt");
+                case Platforms.XPlat:
+                    return File.ReadAllText(@"Solution\XplaSolutionTemplate.txt");
             }
 
             throw new InvalidDataException(nameof(platform));

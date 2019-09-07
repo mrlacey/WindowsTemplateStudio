@@ -91,6 +91,9 @@
     <Content Include="Solution\UwpSolutionTemplate.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Solution\XplatSolutionTemplate.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers">
