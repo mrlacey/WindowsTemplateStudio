@@ -26,13 +26,13 @@
   "preferNameDirectory": true,
   "PrimaryOutputs": [
     {
-      "path": "Param_ProjectName.UWP/Views/BlankViewPage.xaml"
+      "path": "Param_ProjectName.Shared/Views/BlankViewPage.xaml"
     },
     {
-      "path": "Param_ProjectName.UWP/Views/BlankViewPage.xaml.cs"
+      "path": "Param_ProjectName.Shared/Views/BlankViewPage.xaml.cs"
     },
     {
-      "path": "Param_ProjectName.UWP/ViewModels/BlankViewViewModel.cs"
+      "path": "Param_ProjectName.Shared/ViewModels/BlankViewViewModel.cs"
     }
   ],
   "symbols": {
