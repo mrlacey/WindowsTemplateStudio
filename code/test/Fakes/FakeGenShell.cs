@@ -181,6 +181,13 @@ namespace Microsoft.Templates.Fakes
 
         private static string FindProject(string path)
         {
+            // Xplat projects generate everything at one directory higher.
+            // Account for this without having to change other folder structure logic.
+            if (!Directory.Exists(path))
+            {
+                path = Directory.GetParent(path).FullName;
+            }
+
             return Directory.EnumerateFiles(path, "*proj", SearchOption.AllDirectories).FirstOrDefault();
         }
 

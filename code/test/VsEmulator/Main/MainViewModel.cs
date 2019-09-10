@@ -143,7 +143,7 @@ namespace Microsoft.Templates.VsEmulator.Main
             SafeThreading.JoinableTaskFactory.Run(async () =>
             {
                 await SafeThreading.JoinableTaskFactory.SwitchToMainThreadAsync();
-                await NewProjectAsync(Platforms.XPlat, ProgrammingLanguages.CSharp);
+                await NewProjectAsync(Platforms.Xplat, ProgrammingLanguages.CSharp);
             });
         }
 

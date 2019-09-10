@@ -10,7 +10,7 @@ namespace Microsoft.Templates.UI.VisualStudio
     {
         public SolutionWizardXplat()
         {
-            Initialize(Platforms.XPlat, ProgrammingLanguages.CSharp);
+            Initialize(Platforms.Xplat, ProgrammingLanguages.CSharp);
         }
     }
 }

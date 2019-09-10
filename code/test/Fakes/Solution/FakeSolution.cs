@@ -53,6 +53,231 @@ namespace Microsoft.Templates.Fakes
 		{0}.Release|x86.Build.0 = Release|Any CPU
 ";
 
+        private const string SharedProjectTemplate = @"GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		{0}\{0}.projitems*{1}*SharedItemsImports = {2}
+	EndGlobalSection
+	";
+
+        private const string XplatDroidTemplate = @"		{0}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{0}.Ad-Hoc|Any CPU.Deploy.0 = Release|Any CPU
+		{0}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
+		{0}.Ad-Hoc|ARM.Build.0 = Release|Any CPU
+		{0}.Ad-Hoc|ARM.Deploy.0 = Release|Any CPU
+		{0}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{0}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{0}.Ad-Hoc|iPhone.Deploy.0 = Release|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{0}.Ad-Hoc|x64.ActiveCfg = Release|Any CPU
+		{0}.Ad-Hoc|x64.Build.0 = Release|Any CPU
+		{0}.Ad-Hoc|x64.Deploy.0 = Release|Any CPU
+		{0}.Ad-Hoc|x86.ActiveCfg = Release|Any CPU
+		{0}.Ad-Hoc|x86.Build.0 = Release|Any CPU
+		{0}.Ad-Hoc|x86.Deploy.0 = Release|Any CPU
+		{0}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{0}.AppStore|Any CPU.Deploy.0 = Release|Any CPU
+		{0}.AppStore|ARM.ActiveCfg = Release|Any CPU
+		{0}.AppStore|ARM.Build.0 = Release|Any CPU
+		{0}.AppStore|ARM.Deploy.0 = Release|Any CPU
+		{0}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{0}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{0}.AppStore|iPhone.Deploy.0 = Release|Any CPU
+		{0}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0}.AppStore|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{0}.AppStore|x64.ActiveCfg = Release|Any CPU
+		{0}.AppStore|x64.Build.0 = Release|Any CPU
+		{0}.AppStore|x64.Deploy.0 = Release|Any CPU
+		{0}.AppStore|x86.ActiveCfg = Release|Any CPU
+		{0}.AppStore|x86.Build.0 = Release|Any CPU
+		{0}.AppStore|x86.Deploy.0 = Release|Any CPU
+		{0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0}.Debug|x64.Build.0 = Debug|Any CPU
+		{0}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0}.Debug|x86.Build.0 = Debug|Any CPU
+		{0}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0}.Release|ARM.Build.0 = Release|Any CPU
+		{0}.Release|ARM.Deploy.0 = Release|Any CPU
+		{0}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0}.Release|iPhone.Build.0 = Release|Any CPU
+		{0}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{0}.Release|x64.ActiveCfg = Release|Any CPU
+		{0}.Release|x64.Build.0 = Release|Any CPU
+		{0}.Release|x64.Deploy.0 = Release|Any CPU
+		{0}.Release|x86.ActiveCfg = Release|Any CPU
+		{0}.Release|x86.Build.0 = Release|Any CPU
+		{0}.Release|x86.Deploy.0 = Release|Any CPU
+";
+
+        private const string XplatIosTemplate = @"		{0}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhone
+		{0}.Ad-Hoc|ARM.ActiveCfg = Ad-Hoc|iPhone
+		{0}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{0}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhoneSimulator
+		{0}.Ad-Hoc|iPhoneSimulator.Build.0 = Ad-Hoc|iPhoneSimulator
+		{0}.Ad-Hoc|x64.ActiveCfg = Ad-Hoc|iPhone
+		{0}.Ad-Hoc|x86.ActiveCfg = Ad-Hoc|iPhone
+		{0}.AppStore|Any CPU.ActiveCfg = AppStore|iPhone
+		{0}.AppStore|ARM.ActiveCfg = AppStore|iPhone
+		{0}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{0}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{0}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
+		{0}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
+		{0}.AppStore|x64.ActiveCfg = AppStore|iPhone
+		{0}.AppStore|x86.ActiveCfg = AppStore|iPhone
+		{0}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{0}.Debug|ARM.ActiveCfg = Debug|iPhone
+		{0}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0}.Debug|x64.ActiveCfg = Debug|iPhone
+		{0}.Debug|x86.ActiveCfg = Debug|iPhone
+		{0}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{0}.Release|ARM.ActiveCfg = Release|iPhone
+		{0}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0}.Release|iPhone.Build.0 = Release|iPhone
+		{0}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{0}.Release|x64.ActiveCfg = Release|iPhone
+		{0}.Release|x86.ActiveCfg = Release|iPhone
+";
+
+        private const string XplatUwpTemplate = @"		{0}.Ad-Hoc|Any CPU.ActiveCfg = Release|x64
+		{0}.Ad-Hoc|Any CPU.Build.0 = Release|x64
+		{0}.Ad-Hoc|Any CPU.Deploy.0 = Release|x64
+		{0}.Ad-Hoc|ARM.ActiveCfg = Release|ARM
+		{0}.Ad-Hoc|ARM.Build.0 = Release|ARM
+		{0}.Ad-Hoc|ARM.Deploy.0 = Release|ARM
+		{0}.Ad-Hoc|iPhone.ActiveCfg = Release|x64
+		{0}.Ad-Hoc|iPhone.Build.0 = Release|x64
+		{0}.Ad-Hoc|iPhone.Deploy.0 = Release|x64
+		{0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|x64
+		{0}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|x64
+		{0}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Release|x64
+		{0}.Ad-Hoc|x64.ActiveCfg = Release|x64
+		{0}.Ad-Hoc|x64.Build.0 = Release|x64
+		{0}.Ad-Hoc|x64.Deploy.0 = Release|x64
+		{0}.Ad-Hoc|x86.ActiveCfg = Release|x86
+		{0}.Ad-Hoc|x86.Build.0 = Release|x86
+		{0}.Ad-Hoc|x86.Deploy.0 = Release|x86
+		{0}.AppStore|Any CPU.ActiveCfg = Release|x64
+		{0}.AppStore|Any CPU.Build.0 = Release|x64
+		{0}.AppStore|Any CPU.Deploy.0 = Release|x64
+		{0}.AppStore|ARM.ActiveCfg = Release|ARM
+		{0}.AppStore|ARM.Build.0 = Release|ARM
+		{0}.AppStore|ARM.Deploy.0 = Release|ARM
+		{0}.AppStore|iPhone.ActiveCfg = Release|x64
+		{0}.AppStore|iPhone.Build.0 = Release|x64
+		{0}.AppStore|iPhone.Deploy.0 = Release|x64
+		{0}.AppStore|iPhoneSimulator.ActiveCfg = Release|x64
+		{0}.AppStore|iPhoneSimulator.Build.0 = Release|x64
+		{0}.AppStore|iPhoneSimulator.Deploy.0 = Release|x64
+		{0}.AppStore|x64.ActiveCfg = Release|x64
+		{0}.AppStore|x64.Build.0 = Release|x64
+		{0}.AppStore|x64.Deploy.0 = Release|x64
+		{0}.AppStore|x86.ActiveCfg = Release|x86
+		{0}.AppStore|x86.Build.0 = Release|x86
+		{0}.AppStore|x86.Deploy.0 = Release|x86
+		{0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0}.Debug|ARM.Build.0 = Debug|ARM
+		{0}.Debug|ARM.Deploy.0 = Debug|ARM
+		{0}.Debug|iPhone.ActiveCfg = Debug|x86
+		{0}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{0}.Debug|x64.ActiveCfg = Debug|x64
+		{0}.Debug|x64.Build.0 = Debug|x64
+		{0}.Debug|x64.Deploy.0 = Debug|x64
+		{0}.Debug|x86.ActiveCfg = Debug|x86
+		{0}.Debug|x86.Build.0 = Debug|x86
+		{0}.Debug|x86.Deploy.0 = Debug|x86
+		{0}.Release|Any CPU.ActiveCfg = Release|x86
+		{0}.Release|ARM.ActiveCfg = Release|ARM
+		{0}.Release|ARM.Build.0 = Release|ARM
+		{0}.Release|ARM.Deploy.0 = Release|ARM
+		{0}.Release|iPhone.ActiveCfg = Release|x86
+		{0}.Release|iPhoneSimulator.ActiveCfg = Release|x86
+		{0}.Release|x64.ActiveCfg = Release|x64
+		{0}.Release|x64.Build.0 = Release|x64
+		{0}.Release|x64.Deploy.0 = Release|x64
+		{0}.Release|x86.ActiveCfg = Release|x86
+		{0}.Release|x86.Build.0 = Release|x86
+		{0}.Release|x86.Deploy.0 = Release|x86
+";
+
+        private const string XplatWasmTemplate = @"		{0}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|ARM.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|ARM.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|x64.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|x64.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|x86.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|x86.Build.0 = Debug|Any CPU
+		{0}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{0}.AppStore|ARM.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|ARM.Build.0 = Debug|Any CPU
+		{0}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{0}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.AppStore|x64.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|x64.Build.0 = Debug|Any CPU
+		{0}.AppStore|x86.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|x86.Build.0 = Debug|Any CPU
+		{0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0}.Debug|x64.Build.0 = Debug|Any CPU
+		{0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0}.Debug|x86.Build.0 = Debug|Any CPU
+		{0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0}.Release|ARM.Build.0 = Release|Any CPU
+		{0}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0}.Release|iPhone.Build.0 = Release|Any CPU
+		{0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0}.Release|x64.ActiveCfg = Release|Any CPU
+		{0}.Release|x64.Build.0 = Release|Any CPU
+		{0}.Release|x86.ActiveCfg = Release|Any CPU
+		{0}.Release|x86.Build.0 = Release|Any CPU
+";
+
         private const string ProjectTemplate = @"Project(""{{guid}}"") = ""{name}"", ""{path}"", ""{id}""
 EndProject
 ";
@@ -85,7 +310,7 @@ EndProject
             if (slnContent.IndexOf(projectName, StringComparison.Ordinal) == -1)
             {
                 var globalIndex = slnContent.IndexOf("Global", StringComparison.Ordinal);
-                var projectTypeGuid = GetProjectGuid(Path.GetExtension(projectRelativeToSolutionPath), isCPSProject);
+                var projectTypeGuid = GetProjectGuid(projectRelativeToSolutionPath, isCPSProject);
                 var projectContent = ProjectTemplate
                                             .Replace("{guid}", projectTypeGuid)
                                             .Replace("{name}", projectName)
@@ -94,16 +319,30 @@ EndProject
 
                 slnContent = slnContent.Insert(globalIndex, projectContent);
 
-                var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, isCPSProject);
-                if (!string.IsNullOrEmpty(projectConfigurationTemplate))
+                if (platform == Platforms.Xplat && projectName.EndsWith(".Shared", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    var globalSectionIndex = slnContent.IndexOf(ProjectConfigurationPlatformsText, StringComparison.Ordinal);
+                    var sharedProjInsertPoint = slnContent.IndexOf("GlobalSection(SolutionConfigurationPlatforms) = preSolution", StringComparison.Ordinal);
 
-                    var endGobalSectionIndex = slnContent.IndexOf("EndGlobalSection", globalSectionIndex, StringComparison.Ordinal);
+                    // TODO ML: calculate number of items
+                    var sharedItemCount = 13;
 
-                    var projectConfigContent = string.Format(projectConfigurationTemplate, projectGuid);
+                    var sharedProjectContent = string.Format(SharedProjectTemplate, projectName, projectGuid, sharedItemCount);
 
-                    slnContent = slnContent.Insert(endGobalSectionIndex - 1, projectConfigContent);
+                    slnContent = slnContent.Insert(sharedProjInsertPoint, sharedProjectContent);
+                }
+                else
+                {
+                    var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, isCPSProject);
+                    if (!string.IsNullOrEmpty(projectConfigurationTemplate))
+                    {
+                        var globalSectionIndex = slnContent.IndexOf(ProjectConfigurationPlatformsText, StringComparison.Ordinal);
+
+                        var endGobalSectionIndex = slnContent.IndexOf("EndGlobalSection", globalSectionIndex, StringComparison.Ordinal);
+
+                        var projectConfigContent = string.Format(projectConfigurationTemplate, projectGuid);
+
+                        slnContent = slnContent.Insert(endGobalSectionIndex - 1, projectConfigContent);
+                    }
                 }
 
                 if (isCPSProject)
@@ -189,8 +428,15 @@ EndProject
             return slnContent;
         }
 
-        private static string GetProjectGuid(string projectExtension, bool isCPSProject)
+        private static string GetProjectGuid(string filePath, bool isCPSProject)
         {
+            if (filePath.EndsWith(".wasm.csproj", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return "9A19103F-16F7-4668-BE54-9A1E7A4F7556"; // An ASP.NET C# project
+            }
+
+            var projectExtension = Path.GetExtension(filePath);
+
             // See https://github.com/dotnet/project-system/blob/master/docs/opening-with-new-project-system.md
             switch (projectExtension)
             {
@@ -198,6 +444,8 @@ EndProject
                     return isCPSProject ? "9A19103F-16F7-4668-BE54-9A1E7A4F7556" : "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC";
                 case ".vbproj":
                     return isCPSProject ? "778DAE3C-4631-46EA-AA77-85C1314464D9" : "F184B08F-C81C-45F6-A57F-5ABD9991F28F";
+                case ".shproj":
+                    return "D954291E-2A0B-460D-934E-DC6B0785DB48";
             }
 
             return string.Empty;
@@ -216,6 +464,25 @@ EndProject
                     return UwpProjectConfigurationTemplate;
                 }
             }
+            else if (platform == Platforms.Xplat)
+            {
+                if (projectName.EndsWith(".Droid.csproj", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return XplatDroidTemplate;
+                }
+                else if (projectName.EndsWith(".iOS.csproj", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return XplatIosTemplate;
+                }
+                else if (projectName.EndsWith(".UWP.csproj", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return XplatUwpTemplate;
+                }
+                if (projectName.EndsWith(".Wasm.csproj", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return XplatWasmTemplate;
+                }
+            }
 
             return string.Empty;
         }
@@ -226,8 +493,8 @@ EndProject
             {
                 case Platforms.Uwp:
                     return File.ReadAllText(@"Solution\UwpSolutionTemplate.txt");
-                case Platforms.XPlat:
-                    return File.ReadAllText(@"Solution\XplaSolutionTemplate.txt");
+                case Platforms.Xplat:
+                    return File.ReadAllText(@"Solution\XplatSolutionTemplate.txt");
             }
 
             throw new InvalidDataException(nameof(platform));
