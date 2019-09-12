@@ -74,6 +74,10 @@
       "type": "parameter",
       "replaces": "Param_Platform"
     },
+    "wts.homePageName": {
+      "type":"parameter",
+      "replaces":"Param_HomeName"
+    },
     "copyrightYear": {
         "type": "generated",
         "generator": "now",
@@ -99,7 +103,7 @@
         "fallbackVariableName": "HttpPortGenerated"
       },
       "replaces": "8080"
-    },
+    }
   },
   "postActions": [
     {

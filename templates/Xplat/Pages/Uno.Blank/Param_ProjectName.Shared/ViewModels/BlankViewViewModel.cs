@@ -2,7 +2,7 @@
 
 namespace Param_RootNamespace.ViewModels
 {
-    public class BlankViewViewModel : System.ComponentModel.INotifyPropertyChanged
+    public class BlankViewViewModel : BaseViewModel
     {
         public BlankViewViewModel()
         {

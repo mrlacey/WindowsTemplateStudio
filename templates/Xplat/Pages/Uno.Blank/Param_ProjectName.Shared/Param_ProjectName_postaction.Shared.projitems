@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Configuration">
+  </PropertyGroup>
+//{[{
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)\Views\BlankViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\Views\BlankViewPage.xaml.cs">
+      <DependentUpon>BlankViewPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\ViewModels\BlankViewViewModel.cs" />
+  </ItemGroup>
+//}]}
+</Project>
