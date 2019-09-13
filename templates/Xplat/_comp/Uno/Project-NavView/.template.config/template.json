@@ -1,0 +1,43 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Microsoft Community",
+  "classifications": [
+    "Universal"
+  ],
+  "name": "Uno.Project.NavView",
+  "shortName": "Uno.Project.NavView",
+  "identity": "xts.Uno.Project.NavView",
+  "tags": {
+    "language": "C#",
+    "type": "item",
+    "wts.type": "composition",
+    "wts.outputToParent": "true",
+    "wts.platform": "Xplat",
+    "wts.version": "1.0.0",
+    "wts.compositionOrder": "1",
+    "wts.compositionFilter": "$projectType == Uno & wts.type == project & $frontendframework == xNavView"
+  },
+  "sourceName": "wts.ItemName",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [
+    {
+      "path": "Param_ProjectName.Shared/Views/ShellPage.xaml"
+    },
+    {
+      "path": "Param_ProjectName.Shared/Views/ShellPage.xaml.cs"
+    },
+    {
+      "path": "Param_ProjectName.Shared/ViewModels/ShellViewModel.cs"
+    }
+  ],
+  "symbols": {
+    "wts.rootNamespace": {
+      "type": "parameter",
+      "replaces": "Param_RootNamespace"
+    },
+    "wts.homePageName": {
+      "type":"parameter",
+      "replaces":"Param_HomeName"
+    }
+  }
+}

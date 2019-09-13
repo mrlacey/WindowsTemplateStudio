@@ -1,0 +1,34 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Microsoft Community",
+  "classifications": [
+    "Universal"
+  ],
+  "name": "Uno.Project.Blank",
+  "shortName": "Uno.Project.Blank",
+  "identity": "xts.Uno.Project.Blank",
+  "tags": {
+    "language": "C#",
+    "type": "item",
+    "wts.type": "composition",
+    "wts.outputToParent": "true",
+    "wts.platform": "Xplat",
+    "wts.version": "1.0.0",
+    "wts.compositionOrder": "1",
+    "wts.compositionFilter": "$projectType == Uno & wts.type == project & $frontendframework == xBlank"
+  },
+  "sourceName": "wts.ItemName",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [
+  ],
+  "symbols": {
+    "wts.rootNamespace": {
+      "type": "parameter",
+      "replaces": "Param_RootNamespace"
+    },
+    "wts.homePageName": {
+      "type":"parameter",
+      "replaces":"Param_HomeName"
+    }
+  }
+}
