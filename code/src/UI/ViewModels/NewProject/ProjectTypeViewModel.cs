@@ -13,12 +13,14 @@ namespace Microsoft.Templates.UI.ViewModels.NewProject
     public class ProjectTypeViewModel : SelectableGroup<ProjectTypeMetaDataViewModel>
     {
         public ProjectTypeViewModel(Func<bool> isSelectionEnabled, Func<Task> onSelected)
-            : base(isSelectionEnabled, onSelected)
+: base(isSelectionEnabled, onSelected)
         {
         }
 
         public async Task LoadDataAsync(string platform)
         {
+            this.Platform = platform;
+
             if (DataService.LoadProjectTypes(Items, platform))
             {
                 await BaseMainViewModel.BaseInstance.ProcessItemAsync(Items.First());

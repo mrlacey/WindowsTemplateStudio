@@ -26,7 +26,9 @@ namespace Microsoft.Templates.UI.ViewModels.Common
 
         protected string Language { get; private set; }
 
-        protected string Platform { get; private set; }
+        private string _platform;
+
+        public string Platform { get => _platform; private set => SetProperty(ref _platform, value); }
 
         public WizardStatus WizardStatus { get; }
 

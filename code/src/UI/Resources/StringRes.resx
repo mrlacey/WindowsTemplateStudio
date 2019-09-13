@@ -378,7 +378,7 @@
     <comment>Project configuration window title</comment>
   </data>
   <data name="ProjectDetailsAboutSectionLink" xml:space="preserve">
-    <value>Windows Template Studio</value>
+    <value>Template Studio</value>
     <comment>About section link</comment>
   </data>
   <data name="ProjectDetailsAboutSectionTemplatesVersion" xml:space="preserve">
@@ -797,5 +797,33 @@ Please verify the following list of packages needed by your project's code and m
   <data name="NewItemTitleTesting" xml:space="preserve">
     <value>New testing project</value>
     <comment>New item: new testing project title</comment>
+  </data>
+  <data name="XplatFrameworkTitle" xml:space="preserve">
+    <value>Select a cross-platform framework</value>
+    <comment>Title on ProjectTypePage</comment>
+  </data>
+  <data name="XplatNavShellTitle" xml:space="preserve">
+    <value>Select navigation</value>
+    <comment>Title on FrameworkPage</comment>
+  </data>
+  <data name="XplatNewProjectStepDesignPattern" xml:space="preserve">
+    <value>Navigation</value>
+    <comment>New project: Navigation step design pattern</comment>
+  </data>
+  <data name="XplatNewProjectStepProjectType" xml:space="preserve">
+    <value>Framework</value>
+    <comment>New project: Navigation step project type</comment>
+  </data>
+  <data name="XplatNewProjectTitle" xml:space="preserve">
+    <value>New Cross-Platform app</value>
+    <comment>Wizard title on WizardShell page</comment>
+  </data>
+  <data name="XplatProjectDetailsFrameworkSectionTitle" xml:space="preserve">
+    <value>Navigation</value>
+    <comment>Framework combobox header on project details</comment>
+  </data>
+  <data name="XplatProjectDetailsProjectTypeSectionTitle" xml:space="preserve">
+    <value>Framework</value>
+    <comment>Project type combobox header on project details</comment>
   </data>
 </root>

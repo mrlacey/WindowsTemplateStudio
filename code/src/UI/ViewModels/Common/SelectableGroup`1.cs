@@ -25,6 +25,10 @@ namespace Microsoft.Templates.UI.ViewModels.Common
             set => SafeThreading.JoinableTaskFactory.RunAsync(async () => await SelectAsync(value));
         }
 
+        private string _platform;
+
+        public string Platform { get => _platform; set => SetProperty(ref _platform, value); }
+
         public ObservableCollection<T> Items { get; } = new ObservableCollection<T>();
 
         public SelectableGroup(Func<bool> isSelectionEnabled, Func<Task> onSelected = null)

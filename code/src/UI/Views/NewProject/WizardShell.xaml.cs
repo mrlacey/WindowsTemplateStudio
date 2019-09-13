@@ -28,7 +28,7 @@ namespace Microsoft.Templates.UI.Views.NewProject
             Current = this;
             _platform = platform;
             _language = language;
-            ViewModel = new MainViewModel(this, provider);
+            ViewModel = new MainViewModel(this, provider, platform);
             DataContext = ViewModel;
             InitializeComponent();
             NavigationService.InitializeMainFrame(mainFrame, new MainPage());

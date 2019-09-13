@@ -964,7 +964,7 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Windows Template Studio.
+        ///   Looks up a localized string similar to Template Studio.
         /// </summary>
         public static string ProjectDetailsAboutSectionLink {
             get {
@@ -1590,6 +1590,69 @@ namespace Microsoft.Templates.UI.Resources {
         public static string WindowsTemplateStudio {
             get {
                 return ResourceManager.GetString("WindowsTemplateStudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a cross-platform framework.
+        /// </summary>
+        public static string XplatFrameworkTitle {
+            get {
+                return ResourceManager.GetString("XplatFrameworkTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select navigation.
+        /// </summary>
+        public static string XplatNavShellTitle {
+            get {
+                return ResourceManager.GetString("XplatNavShellTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigation.
+        /// </summary>
+        public static string XplatNewProjectStepDesignPattern {
+            get {
+                return ResourceManager.GetString("XplatNewProjectStepDesignPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Framework.
+        /// </summary>
+        public static string XplatNewProjectStepProjectType {
+            get {
+                return ResourceManager.GetString("XplatNewProjectStepProjectType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Cross-Platform app.
+        /// </summary>
+        public static string XplatNewProjectTitle {
+            get {
+                return ResourceManager.GetString("XplatNewProjectTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigation.
+        /// </summary>
+        public static string XplatProjectDetailsFrameworkSectionTitle {
+            get {
+                return ResourceManager.GetString("XplatProjectDetailsFrameworkSectionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Framework.
+        /// </summary>
+        public static string XplatProjectDetailsProjectTypeSectionTitle {
+            get {
+                return ResourceManager.GetString("XplatProjectDetailsProjectTypeSectionTitle", resourceCulture);
             }
         }
     }

@@ -19,6 +19,8 @@ namespace Microsoft.Templates.UI.ViewModels.NewProject
 
         public async Task LoadDataAsync(string projectTypeName, string platform)
         {
+            this.Platform = platform;
+
             if (DataService.LoadFrameworks(Items, projectTypeName, platform))
             {
                 await BaseMainViewModel.BaseInstance.ProcessItemAsync(Items.First());

@@ -61,8 +61,8 @@ namespace Microsoft.Templates.UI.ViewModels.NewProject
             }
         }
 
-        public MainViewModel(Window mainView, BaseStyleValuesProvider provider)
-            : base(mainView, provider, NewProjectSteps)
+        public MainViewModel(Window mainView, BaseStyleValuesProvider provider, string platform = Platforms.Uwp)
+            : base(mainView, provider, NewProjectSteps(platform))
         {
             Instance = this;
             ValidationService.Initialize(UserSelection.GetNames, UserSelection.GetPageNames);
@@ -76,12 +76,17 @@ namespace Microsoft.Templates.UI.ViewModels.NewProject
             UserSelection.UnsubscribeEventHandlers();
         }
 
-        private static IEnumerable<StepData> NewProjectSteps
+        private static IEnumerable<StepData> NewProjectSteps(string platform)
         {
-            get
+            if (platform == Platforms.Uwp)
             {
                 yield return StepData.MainStep(NewProjectStepProjectType, "1", StringRes.NewProjectStepProjectType, () => new ProjectTypePage(), true, true);
                 yield return StepData.MainStep(NewProjectStepFramework, "2", StringRes.NewProjectStepDesignPattern, () => new FrameworkPage());
+            }
+            else if (platform == Platforms.Xplat)
+            {
+                yield return StepData.MainStep(NewProjectStepProjectType, "1", StringRes.XplatNewProjectStepProjectType, () => new ProjectTypePage(), true, true);
+                yield return StepData.MainStep(NewProjectStepFramework, "2", StringRes.XplatNewProjectStepDesignPattern, () => new FrameworkPage());
             }
         }
 

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:strings="clr-namespace:Microsoft.Templates.UI.Resources"
+      xmlns:converters="clr-namespace:Microsoft.Templates.UI.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300">
 
@@ -12,6 +13,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Microsoft.Templates.UI;component/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <converters:PlatformToVisibilityConverter x:Key="PlatformToVisibilityConverter"/>
         </ResourceDictionary>
     </Page.Resources>
 
@@ -23,6 +25,13 @@
         <TextBlock
             Grid.Row="0"
             Text="{x:Static strings:StringRes.FrameworkTitle}"
+            Visibility="{Binding Platform, Converter={StaticResource PlatformToVisibilityConverter}, ConverterParameter=Uwp}"
+            Margin="{StaticResource Margin_L_LeftRight_M2_Top}"
+            Style="{StaticResource WtsTextBlockSectionTitle}" />
+        <TextBlock
+            Grid.Row="0"
+            Visibility="{Binding Platform, Converter={StaticResource PlatformToVisibilityConverter}, ConverterParameter=Xplat}"
+            Text="{x:Static strings:StringRes.XplatNavShellTitle}"
             Margin="{StaticResource Margin_L_LeftRight_M2_Top}"
             Style="{StaticResource WtsTextBlockSectionTitle}" />
         <ListView

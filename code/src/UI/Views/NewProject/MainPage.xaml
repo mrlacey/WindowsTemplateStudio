@@ -19,6 +19,7 @@
             </ResourceDictionary.MergedDictionaries>
             <converters:HasItemsVisibilityConverter x:Key="HasItemsVisibilityConverter" />
             <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converters:PlatformToVisibilityConverter x:Key="PlatformToVisibilityConverter"/>
         </ResourceDictionary>
     </Page.Resources>
 
@@ -60,9 +61,15 @@
                             Margin="{StaticResource Margin_M2_LeftTopRight}"
                             Text="{x:Static strings:StringRes.ProjectDetailsTitle}" />
                         <TextBlock
+                            Visibility="{Binding Platform, Converter={StaticResource PlatformToVisibilityConverter}, ConverterParameter=Uwp}"
                             Style="{StaticResource WtsTextBlockSubSectionTitle}"
                             Margin="{StaticResource Margin_M2_LeftRight_L_Top}"
                             Text="{x:Static strings:StringRes.ProjectDetailsProjectTypeSectionTitle}" />
+                        <TextBlock
+                            Visibility="{Binding Platform, Converter={StaticResource PlatformToVisibilityConverter}, ConverterParameter=Xplat}"
+                            Style="{StaticResource WtsTextBlockSubSectionTitle}"
+                            Margin="{StaticResource Margin_M2_LeftRight_L_Top}"
+                            Text="{x:Static strings:StringRes.XplatProjectDetailsProjectTypeSectionTitle}" />
                         <ComboBox
                             x:Name="projectTypeCombo"
                             Margin="16,12,26,0"
@@ -73,9 +80,15 @@
                             AutomationProperties.Name="{x:Static strings:StringRes.ProjectDetailsProjectTypeSectionTitle}"
                             PreviewKeyDown="ComboBox_PreviewKeyDown" />
                         <TextBlock
+                            Visibility="{Binding Platform, Converter={StaticResource PlatformToVisibilityConverter}, ConverterParameter=Uwp}"
                             Style="{StaticResource WtsTextBlockSubSectionTitle}"
                             Margin="{StaticResource Margin_M2_LeftRight_L_Top}"
                             Text="{x:Static strings:StringRes.ProjectDetailsFrameworkSectionTitle}" />
+                        <TextBlock
+                            Visibility="{Binding Platform, Converter={StaticResource PlatformToVisibilityConverter}, ConverterParameter=Xplat}"
+                            Style="{StaticResource WtsTextBlockSubSectionTitle}"
+                            Margin="{StaticResource Margin_M2_LeftRight_L_Top}"
+                            Text="{x:Static strings:StringRes.XplatProjectDetailsFrameworkSectionTitle}" />
                         <ComboBox
                             x:Name="frameworkCombo"
                             Margin="16,12,26,0"
