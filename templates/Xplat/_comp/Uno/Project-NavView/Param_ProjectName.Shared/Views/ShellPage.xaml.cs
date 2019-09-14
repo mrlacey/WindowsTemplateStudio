@@ -14,6 +14,10 @@ namespace Param_RootNamespace.Views
             InitializeComponent();
             DataContext = ViewModel;
 
+            // Handle back button
+            this.ContentFrame.Navigated += (s, a) => { this.navigationView.IsBackEnabled = this.ContentFrame.CanGoBack; };
+            this.navigationView.BackRequested += (s, a) => { if (this.ContentFrame.CanGoBack) this.ContentFrame.GoBack(); };
+
             this.ContentFrame.Navigate(typeof(Param_HomeNamePage), null, null);
         }
 
