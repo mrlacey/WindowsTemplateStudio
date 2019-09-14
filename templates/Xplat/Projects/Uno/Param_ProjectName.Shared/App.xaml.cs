@@ -43,12 +43,14 @@ namespace Param_RootNamespace
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+//-:cnd:noEmit
 #if DEBUG
-			if (System.Diagnostics.Debugger.IsAttached)
-			{
-				// this.DebugSettings.EnableFrameRateCounter = true;
-			}
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                // this.DebugSettings.EnableFrameRateCounter = true;
+            }
 #endif
+//+:cnd:noEmit
             Frame rootFrame = Windows.UI.Xaml.Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -119,33 +121,35 @@ namespace Param_RootNamespace
                         { "Uno", LogLevel.Warning },
                         { "Windows", LogLevel.Warning },
 
-						// Debug JS interop
-						// { "Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug },
+                        // Debug JS interop
+                        // { "Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug },
 
-						// Generic Xaml events
-						// { "Windows.UI.Xaml", LogLevel.Debug },
-						// { "Windows.UI.Xaml.VisualStateGroup", LogLevel.Debug },
-						// { "Windows.UI.Xaml.StateTriggerBase", LogLevel.Debug },
-						// { "Windows.UI.Xaml.UIElement", LogLevel.Debug },
+                        // Generic Xaml events
+                        // { "Windows.UI.Xaml", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.VisualStateGroup", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.StateTriggerBase", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.UIElement", LogLevel.Debug },
 
-						// Layouter specific messages
-						// { "Windows.UI.Xaml.Controls", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.Layouter", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.Panel", LogLevel.Debug },
-						// { "Windows.Storage", LogLevel.Debug },
+                        // Layouter specific messages
+                        // { "Windows.UI.Xaml.Controls", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.Layouter", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.Panel", LogLevel.Debug },
+                        // { "Windows.Storage", LogLevel.Debug },
 
-						// Binding related messages
-						// { "Windows.UI.Xaml.Data", LogLevel.Debug },
+                        // Binding related messages
+                        // { "Windows.UI.Xaml.Data", LogLevel.Debug },
 
-						// DependencyObject memory references tracking
-						// { "ReferenceHolder", LogLevel.Debug },
-					}
+                        // DependencyObject memory references tracking
+                        // { "ReferenceHolder", LogLevel.Debug },
+                    }
                 )
+//-:cnd:noEmit
 #if DEBUG
-				.AddConsole(LogLevel.Debug);
+                .AddConsole(LogLevel.Debug);
 #else
                 .AddConsole(LogLevel.Information);
 #endif
+//+:cnd:noEmit
         }
     }
 }
