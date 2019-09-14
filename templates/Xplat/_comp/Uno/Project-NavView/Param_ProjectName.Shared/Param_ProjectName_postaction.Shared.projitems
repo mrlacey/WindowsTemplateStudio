@@ -4,10 +4,10 @@
   </PropertyGroup>
 //{[{
   <ItemGroup>
-    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)\Views\ShellPage.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)\Views\ShellPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)\Views\ShellPage.xaml.cs">
