@@ -4,9 +4,9 @@
   "classifications": [
     "Universal"
   ],
-  "name": "Uno.NavView.Page.Blank",
-  "shortName": "Uno.NavView.Page.Blank",
-  "identity": "xts.Uno.NavView.Page.Blank",
+  "name": "Uno.NavView.Page.NavViewItem",
+  "shortName": "Uno.NavView.Page.NavViewItem",
+  "identity": "xts.Uno.NavView.Page.NavViewItem",
   "tags": {
     "language": "C#",
     "type": "item",
