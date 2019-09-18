@@ -6,13 +6,11 @@ namespace Param_RootNamespace.Views
 {
     public sealed partial class BlankViewPage : Page
     {
-        private BlankViewViewModel ViewModel;
+        private BlankViewViewModel ViewModel = new BlankViewViewModel();
 
         public BlankViewPage()
         {
             InitializeComponent();
-
-            this.ViewModel = new BlankViewViewModel();
         }
     }
 }
