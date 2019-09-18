@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Configuration">
+  </PropertyGroup>
+//{[{
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)\Views\SettingsPagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\Views\SettingsPagePage.xaml.cs">
+      <DependentUpon>SettingsPagePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\ViewModels\SettingsPageViewModel.cs" />
+  </ItemGroup>
+//}]}
+</Project>

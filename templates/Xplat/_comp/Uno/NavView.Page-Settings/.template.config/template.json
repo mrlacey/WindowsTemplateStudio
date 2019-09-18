@@ -4,9 +4,9 @@
   "classifications": [
     "Universal"
   ],
-  "name": "Uno.NavView.Page.NavViewItem",
-  "shortName": "Uno.NavView.Page.NavViewItem",
-  "identity": "xts.Uno.NavView.Page.NavViewItem",
+  "name": "Uno.NavView.Page.Settings",
+  "shortName": "Uno.NavView.Page.Settings",
+  "identity": "xts.Uno.NavView.Page.Settings",
   "tags": {
     "language": "C#",
     "type": "item",
@@ -15,7 +15,7 @@
     "wts.platform": "Xplat",
     "wts.version": "1.0.0",
     "wts.compositionOrder": "1",
-    "wts.compositionFilter": "$projectType == Uno & wts.type == page & $frontendframework == xNavView & identity != xts.Uno.Page.Settings"
+    "wts.compositionFilter": "$frontendframework == xNavView & identity == xts.Uno.Page.Settings"
   },
   "sourceName": "wts.ItemName",
   "preferNameDirectory": true,

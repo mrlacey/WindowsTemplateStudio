@@ -22,6 +22,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)\ViewModels\BaseViewModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)\Helpers\ResourceExtensions.cs" />
+  </ItemGroup>
     <ItemGroup>
         <Content Include="$(MSBuildThisFileDirectory)Assets\LockScreenLogo.scale-200.png" />
         <Content Include="$(MSBuildThisFileDirectory)Assets\SplashScreen.scale-200.png" />

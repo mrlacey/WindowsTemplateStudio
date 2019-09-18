@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Param_RootNamespace.Views.SettingsPagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helper="using:Param_RootNamespace.Helpers"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xaml="using:Windows.UI.Xaml"
+    mc:Ignorable="d">
+
+    <Grid Margin="12">
+        <StackPanel x:Name="ContentArea">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="32">Settings</TextBlock>
+            <TextBlock x:Uid="SettingsPage_About"/>
+
+            <StackPanel>
+                <TextBlock Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" />
+                <TextBlock
+                    x:Uid="SettingsPage_AboutDescription"
+                    Margin="0,12" />
+
+                <HyperlinkButton x:Uid="SettingsPage_PrivacyTermsLink" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>    
+</Page>

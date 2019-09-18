@@ -9,6 +9,7 @@
 
     <NavigationView
         x:Name="navigationView"
+        IsSettingsVisible="False"
         SelectionChanged="OnSelectionChanged">
         <NavigationView.MenuItems>
         </NavigationView.MenuItems>

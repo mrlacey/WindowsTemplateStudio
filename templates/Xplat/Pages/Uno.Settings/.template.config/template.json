@@ -4,11 +4,11 @@
   "classifications": [
     "Universal"
   ],
-  "name": "Map",
-  "shortName": "Map",
-  "groupIdentity": "xts.Uno.Page.Map",
-  "identity": "xts.Uno.Page.Map",
-  "description": "The map page is based around the Map Control. Code includes adding a Map Icon and setting your location.",
+  "name": "Settings",
+  "shortName": "Settings",
+  "groupIdentity": "xts.Uno.Page.Settings",
+  "identity": "xts.Uno.Page.Settings",
+  "description": "The settings page is the page where we recommend putting the configuration settings for your app.",
   "tags": {
     "language": "C#",
     "type": "item",
@@ -18,24 +18,23 @@
     "wts.frontendframework": "xBlank|xNavView",
     "wts.platform": "Xplat",
     "wts.version": "1.0.0",
-    "wts.displayOrder": "3",
+    "wts.displayOrder": "2",
     "wts.genGroup": "0",
+    "wts.multipleInstance": "false",
+    "wts.defaultInstance": "Settings",
     "wts.rightClickEnabled":"true"
   },
-  "sourceName": "MapPage",
+  "sourceName": "SettingsPage",
   "preferNameDirectory": true,
   "PrimaryOutputs": [
     {
-      "path": "Param_ProjectName.Shared/Views/MapPagePage.xaml"
+      "path": "Param_ProjectName.Shared/Views/SettingsPagePage.xaml"
     },
     {
-      "path": "Param_ProjectName.Shared/Views/MapPagePage.xaml.cs"
+      "path": "Param_ProjectName.Shared/Views/SettingsPagePage.xaml.cs"
     },
     {
-      "path": "Param_ProjectName.Shared/ViewModels/MapPageViewModel.cs"
-    },
-    {
-      "path": "Param_ProjectName.Shared/Assets/map.png"
+      "path": "Param_ProjectName.Shared/ViewModels/SettingsPageViewModel.cs"
     }
   ],
   "symbols": {
