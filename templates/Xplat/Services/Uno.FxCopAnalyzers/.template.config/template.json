@@ -1,0 +1,74 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Microsoft Community",
+  "classifications": [
+    "Universal"
+  ],
+  "name": "FxCopAnalyzers",
+  "shortName": "FxCopAnalyzers",
+  "groupIdentity": "xts.Uno.Services.FxCopAnalyzers",
+  "identity": "xts.Uno.Services.FxCopAnalyzers",
+  "description": "This analyzer checks your code for security, performance, and design issues.",
+  "tags": {
+    "language": "C#",
+    "type": "item",
+    "wts.type": "service",
+    "wts.projecttype": "Uno",
+    "wts.outputToParent": "true",
+    "wts.frontendframework": "xBlank|xNavView",
+    "wts.platform": "Xplat",
+    "wts.version": "1.0.0",
+    "wts.displayOrder": "1",
+    "wts.genGroup": "0"
+  },
+  "sourceName": "FxCopAnalyzers",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [
+  ],
+  "postActions": [
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Microsoft.CodeAnalysis.FxCopAnalyzers",
+        "version" : "2.9.4",
+        "projectPath": "Param_ProjectName.Droid/Param_ProjectName.Droid.csproj"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Microsoft.CodeAnalysis.FxCopAnalyzers",
+        "version" : "2.9.4",
+        "projectPath": "Param_ProjectName.iOS/Param_ProjectName.iOS.csproj"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Microsoft.CodeAnalysis.FxCopAnalyzers",
+        "version" : "2.9.4",
+        "projectPath": "Param_ProjectName.UWP/Param_ProjectName.UWP.csproj"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Microsoft.CodeAnalysis.FxCopAnalyzers",
+        "version" : "2.9.4",
+        "projectPath": "Param_ProjectName.Wasm/Param_ProjectName.Wasm.csproj"
+      },
+      "continueOnError": true
+    }
+  ]
+}

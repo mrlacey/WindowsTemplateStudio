@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+    <Canvas Width="48" Height="48">
+        <Canvas.Resources>
+            <Polygon
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                x:Key="path-1"
+                Name="path1"
+                Fill="#FF000000"
+                FillRule="NonZero"
+                Points="84.652158,3.7002935 84.652158,88.341913 0,88.341913 0,46.021103 0,3.7002935 " />
+        </Canvas.Resources>
+        <Canvas>
+            <Canvas.RenderTransform>
+                <MatrixTransform Matrix="0.09191709 0 0 0.09191709 0.54237288 0.66040314" />
+            </Canvas.RenderTransform>
+            <Canvas>
+                <Canvas>
+                    <Canvas.RenderTransform>
+                        <TranslateTransform X="0" Y="6" />
+                    </Canvas.RenderTransform>
+                    <Path
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        Fill="#FF000000"
+                        StrokeThickness="1">
+                        <Path.Data>
+                            <PathGeometry Figures="m 374.42496 454.85699 c -46.74915 0 -84.65216 -37.90681 -84.65216 -84.66067 0 -46.73269 37.90301 -84.66066 84.65216 -84.66066 46.74915 0 84.65216 37.92797 84.65216 84.66066 0 46.75386 -37.90301 84.66067 -84.65216 84.66067 M 205.56507 260.81474 c -29.22616 0 -52.9076 -23.70499 -52.9076 -52.91292 0 -29.22909 23.68144 -52.91291 52.9076 -52.91291 29.22615 0 52.9076 23.68382 52.9076 52.91291 0 29.20793 -23.68145 52.91292 -52.9076 52.91292 M 378.17082 95.641779 H 236.88636 c -71.99666 0 -130.40664 58.415861 -130.40664 130.440921 v 141.27749 c 0 72.04623 58.40998 130.41976 130.40664 130.41976 h 141.28446 c 72.03898 0 130.40665 -58.37353 130.40665 -130.41976 V 226.0827 c 0 -72.02506 -58.36767 -130.440921 -130.40665 -130.440921" FillRule="EvenOdd" />
+                        </Path.Data>
+                    </Path>
+                    <Path
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        Fill="#FF000000"
+                        StrokeThickness="1">
+                        <Path.Data>
+                            <PathGeometry Figures="m 84.652158 46.011579 c 0 23.387509 -18.962084 42.330334 -42.326079 42.330334 C 18.94092 88.341913 0 69.399088 0 46.011579 0 22.645234 18.94092 3.6812449 42.326079 3.6812449 c 23.363995 0 42.326079 18.9639891 42.326079 42.3303341" FillRule="EvenOdd" />
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Canvas>
+    </Canvas>
+</Viewbox>

@@ -1,0 +1,1 @@
+﻿Microsoft created a set of analyzers, called Microsoft.CodeAnalysis.FxCopAnalyzers, that contains the most important "FxCop" rules from legacy analysis. These analyzers check your code for security, performance, and design issues, among others.
