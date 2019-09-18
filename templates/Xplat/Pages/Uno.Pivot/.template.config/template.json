@@ -4,11 +4,11 @@
   "classifications": [
     "Universal"
   ],
-  "name": "Blank",
-  "shortName": "Blank",
-  "groupIdentity": "xts.Uno.Page.Blank",
-  "identity": "xts.Uno.Page.Blank",
-  "description": "This is the most basic page. A blank canvas to mold into whatever you wish.",
+  "name": "Pivot",
+  "shortName": "Pivot",
+  "groupIdentity": "xts.Uno.Page.Pivot",
+  "identity": "xts.Uno.Page.Pivot",
+  "description": "The tabbed page is used for navigating frequently accessed, distinct content categories.",
   "tags": {
     "language": "C#",
     "type": "item",
@@ -18,21 +18,21 @@
     "wts.frontendframework": "xBlank|xNavView",
     "wts.platform": "Xplat",
     "wts.version": "1.0.0",
-    "wts.displayOrder": "1",
+    "wts.displayOrder": "4",
     "wts.genGroup": "0",
     "wts.rightClickEnabled":"true"
   },
-  "sourceName": "BlankView",
+  "sourceName": "TabbedPivotPage",
   "preferNameDirectory": true,
   "PrimaryOutputs": [
     {
-      "path": "Param_ProjectName.Shared/Views/BlankViewPage.xaml"
+      "path": "Param_ProjectName.Shared/Views/TabbedPivotPagePage.xaml"
     },
     {
-      "path": "Param_ProjectName.Shared/Views/BlankViewPage.xaml.cs"
+      "path": "Param_ProjectName.Shared/Views/TabbedPivotPagePage.xaml.cs"
     },
     {
-      "path": "Param_ProjectName.Shared/ViewModels/BlankViewViewModel.cs"
+      "path": "Param_ProjectName.Shared/ViewModels/TabbedPivotPageViewModel.cs"
     }
   ],
   "symbols": {

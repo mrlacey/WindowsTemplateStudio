@@ -4,15 +4,13 @@ using Param_RootNamespace.ViewModels;
 
 namespace Param_RootNamespace.Views
 {
-    public sealed partial class BlankViewPage : Page
+    public sealed partial class TabbedPivotPagePage : Page
     {
-        private BlankViewViewModel ViewModel;
-
-        public BlankViewPage()
+        TabbedPivotPageViewModel ViewModel = new TabbedPivotPageViewModel();
+    
+        public TabbedPivotPagePage()
         {
             InitializeComponent();
-
-            this.ViewModel = new BlankViewViewModel();
         }
     }
 }

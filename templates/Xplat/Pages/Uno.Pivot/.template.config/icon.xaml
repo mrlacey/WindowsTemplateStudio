@@ -3,7 +3,7 @@
   <Canvas Width="48" Height="48">
     <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Fill="#000000">
       <Path.Data>
-        <PathGeometry Figures="M28.414 4H7V44H39V14.586ZM29 7.414 35.586 14H29ZM9 42V6H27V16H37V42Z" FillRule="NonZero"/>
+        <PathGeometry Figures="M48 42H0V4H48ZM2 40H46V6H2ZM16 10H6v2H16Zm14 0H20v2H30Zm12 0H34v2h8Zm0 26H6V16H42ZM8 34H40V18H8Z" FillRule="NonZero"/>
       </Path.Data>
     </Path>
   </Canvas>

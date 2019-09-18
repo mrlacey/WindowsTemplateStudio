@@ -4,18 +4,18 @@
   </PropertyGroup>
 //{[{
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)\Views\BlankViewPage.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)\Views\TabbedPivotPagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)\Views\BlankViewPage.xaml.cs">
-      <DependentUpon>BlankViewPage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)\Views\TabbedPivotPagePage.xaml.cs">
+      <DependentUpon>TabbedPivotPagePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)\ViewModels\BlankViewViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)\ViewModels\TabbedPivotPageViewModel.cs" />
   </ItemGroup>
 //}]}
 </Project>
