@@ -1,0 +1,43 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Microsoft Community",
+  "classifications": ["Universal"],
+  "name": "HTTP Data Service",
+  "shortName": "HTTP Data Service",
+  "groupIdentity": "xts.Xf.Service.HttpDataService",
+  "identity": "xts.Xf.Service.HttpDataService",
+  "description": "Access content over HTTP.",
+  "tags": {
+    "language": "C#",
+    "type": "item",
+    "wts.type": "service",
+    "wts.projecttype": "XamarinForms",
+    "wts.frontendframework": "xMasterDetail|xTabbed|xShell|xBlank",
+    "wts.platform": "Xplat",
+    "wts.group": "Data",
+    "wts.version": "1.0.0",
+    "wts.displayOrder": "1",
+    "wts.defaultInstance": "HttpDataService",
+    "wts.multipleInstance": "false",
+    "wts.licenses": "[Newtonsoft.Json](https://raw.githubusercontent.com/JamesNK/Newtonsoft.Json/master/LICENSE.md)",
+    "wts.isHidden": "false",
+    "wts.genGroup": "0",
+    "wts.rightClickEnabled":"true",
+    "wts.outputToParent": "true"
+  },
+  "sourceName": "HttpDataServiceFeature",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [
+  ],
+  "symbols": {
+    "wts.projectName": {
+      "type": "parameter",
+      "replaces": "Param_ProjectName",
+      "fileRename": "Param_ProjectName"
+    },
+    "wts.rootNamespace": {
+      "type": "parameter",
+      "replaces": "Param_RootNamespace"
+    }
+  }
+}

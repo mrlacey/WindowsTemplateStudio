@@ -1,0 +1,44 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Microsoft Community",
+  "classifications": ["Universal"],
+  "name": "Web API",
+  "shortName": "Web API",
+  "groupIdentity": "xts.Xf.Service.WebApi",
+  "identity": "xts.Xf.Service.WebApi",
+  "description": "Include ASP.NET Core Web API project.",
+  "tags": {
+    "language": "C#",
+    "type": "item",
+    "wts.type": "service",
+    "wts.projecttype": "XamarinForms",
+    "wts.frontendframework": "xMasterDetail|xTabbed|xShell|xBlank",
+    "wts.platform": "Xplat",
+    "wts.group": "Data",
+    "wts.version": "1.0.0",
+    "wts.displayOrder": "1",
+    "wts.defaultInstance": "WebApi",
+    "wts.multipleInstance": "false",
+    "wts.dependencies":"xts.Xf.Service.HttpDataService",
+    "wts.isHidden": "false",
+    "wts.genGroup": "0",
+    "wts.rightClickEnabled":"true",
+    "wts.outputToParent": "true",
+    "wts.licenses": "[AspNetCore](https://raw.githubusercontent.com/aspnet/AspNetCore/2.0.0/LICENSE.txt)|[DotNetCore](https://github.com/dotnet/core-setup/blob/master/LICENSE.TXT)|[Swashbuckle](https://raw.githubusercontent.com/domaindrivendev/Swashbuckle.AspNetCore/master/LICENSE)"
+  },
+  "sourceName": "WebApiFeature",
+  "preferNameDirectory": true,
+  "PrimaryOutputs": [
+  ],
+  "symbols": {
+    "wts.projectName": {
+      "type": "parameter",
+      "replaces": "Param_ProjectName",
+      "fileRename": "Param_ProjectName"
+    },
+    "wts.rootNamespace": {
+      "type": "parameter",
+      "replaces": "Param_RootNamespace"
+    }
+  }
+}
