@@ -20,7 +20,7 @@
   },
   "sourceName": "xts.DefaultProject",
   "preferNameDirectory": true,
-  "guids": [ "7cf740f7-735f-48ea-8b7b-3ffa4902371c", "be236938-efed-4037-b3f2-70788b43ca20" ],
+  "guids": [ "7cf740f7-735f-48ea-8b7b-3ffa4902371c", "be236938-efed-4037-b3f2-70788b43ca20", "a2b774c9-654a-4061-84a4-fe2c37c1e22f", "a605d23e-3c58-432f-848e-29ee952f73b9", "efe76294-4115-4939-842b-4bfe594f42e7" ],
   "PrimaryOutputs":
   [
     { "path": "Param_ProjectName.UWP/xts.DefaultProject.UWP.csproj" },
