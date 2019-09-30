@@ -102,9 +102,11 @@ namespace Microsoft.Templates.Fakes
 
                 var projectRelativeToSolutionPath = project.Replace(Path.GetDirectoryName(SolutionPath) + Path.DirectorySeparatorChar, string.Empty);
 
-                solutionFile.AddProjectToSolution(_platform, msbuildProj.Name, msbuildProj.Guid, projectRelativeToSolutionPath, IsCpsProject(project));
+                var isCpsProject = IsCpsProject(project);
 
-                if (!IsCpsProject(project) && filesByProject.ContainsKey(project))
+                solutionFile.AddProjectToSolution(_platform, msbuildProj.Name, msbuildProj.Guid, projectRelativeToSolutionPath, isCpsProject);
+
+                if (!isCpsProject && filesByProject.ContainsKey(project))
                 {
                     AddItems(project, filesByProject[project]);
                 }
@@ -292,7 +294,10 @@ namespace Microsoft.Templates.Fakes
         private bool IsCpsProject(string projectPath)
         {
             string[] targetFrameworkTags = { "</TargetFramework>", "</TargetFrameworks>" };
-            return targetFrameworkTags.Any(t => File.ReadAllText(projectPath).Contains(t));
+
+            var fileContents = File.ReadAllText(projectPath);
+
+            return targetFrameworkTags.Any(t => fileContents.Contains(t));
         }
 
         public override string CreateCertificate(string publisherName)
