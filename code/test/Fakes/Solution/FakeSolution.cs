@@ -219,11 +219,17 @@ namespace Microsoft.Templates.Fakes
 		{0}.AppStore|x86.Build.0 = Release|x86
 		{0}.AppStore|x86.Deploy.0 = Release|x86
 		{0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0}.Debug|Any CPU.Build.0 = Debug|x86
+		{0}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{0}.Debug|ARM.ActiveCfg = Debug|ARM
 		{0}.Debug|ARM.Build.0 = Debug|ARM
 		{0}.Debug|ARM.Deploy.0 = Debug|ARM
 		{0}.Debug|iPhone.ActiveCfg = Debug|x86
+		{0}.Debug|iPhone.Build.0 = Debug|x86
+		{0}.Debug|iPhone.Deploy.0 = Debug|x86
 		{0}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{0}.Debug|iPhoneSimulator.Build.0 = Debug|x86
+		{0}.Debug|iPhoneSimulator.Deploy.0 = Debug|x86
 		{0}.Debug|x64.ActiveCfg = Debug|x64
 		{0}.Debug|x64.Build.0 = Debug|x64
 		{0}.Debug|x64.Deploy.0 = Debug|x64
@@ -231,17 +237,97 @@ namespace Microsoft.Templates.Fakes
 		{0}.Debug|x86.Build.0 = Debug|x86
 		{0}.Debug|x86.Deploy.0 = Debug|x86
 		{0}.Release|Any CPU.ActiveCfg = Release|x86
+		{0}.Release|Any CPU.Build.0 = Release|x86
+		{0}.Release|Any CPU.Deploy.0 = Release|x86
 		{0}.Release|ARM.ActiveCfg = Release|ARM
 		{0}.Release|ARM.Build.0 = Release|ARM
 		{0}.Release|ARM.Deploy.0 = Release|ARM
 		{0}.Release|iPhone.ActiveCfg = Release|x86
+		{0}.Release|iPhone.Build.0 = Release|x86
+		{0}.Release|iPhone.Deploy.0 = Release|x86
 		{0}.Release|iPhoneSimulator.ActiveCfg = Release|x86
+		{0}.Release|iPhoneSimulator.Build.0 = Release|x86
+		{0}.Release|iPhoneSimulator.Deploy.0 = Release|x86
 		{0}.Release|x64.ActiveCfg = Release|x64
 		{0}.Release|x64.Build.0 = Release|x64
 		{0}.Release|x64.Deploy.0 = Release|x64
 		{0}.Release|x86.ActiveCfg = Release|x86
 		{0}.Release|x86.Build.0 = Release|x86
 		{0}.Release|x86.Deploy.0 = Release|x86
+";
+
+        private const string StdLibTemplate = @"		{0}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|Any CPU.Deploy.0 = Debug|Any CPU
+		{0}.Ad-Hoc|ARM.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|ARM.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|ARM.Deploy.0 = Debug|Any CPU
+		{0}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|iPhone.Deploy.0 = Debug|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{0}.Ad-Hoc|x64.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|x64.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|x64.Deploy.0 = Debug|Any CPU
+		{0}.Ad-Hoc|x86.ActiveCfg = Debug|Any CPU
+		{0}.Ad-Hoc|x86.Build.0 = Debug|Any CPU
+		{0}.Ad-Hoc|x86.Deploy.0 = Debug|Any CPU
+		{0}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{0}.AppStore|Any CPU.Deploy.0 = Debug|Any CPU
+		{0}.AppStore|ARM.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|ARM.Build.0 = Debug|Any CPU
+		{0}.AppStore|ARM.Deploy.0 = Debug|Any CPU
+		{0}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{0}.AppStore|iPhone.Deploy.0 = Debug|Any CPU
+		{0}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.AppStore|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{0}.AppStore|x64.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|x64.Build.0 = Debug|Any CPU
+		{0}.AppStore|x64.Deploy.0 = Debug|Any CPU
+		{0}.AppStore|x86.ActiveCfg = Debug|Any CPU
+		{0}.AppStore|x86.Build.0 = Debug|Any CPU
+		{0}.AppStore|x86.Deploy.0 = Debug|Any CPU
+		{0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0}.Debug|iPhone.Deploy.0 = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
+		{0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0}.Debug|x64.Build.0 = Debug|Any CPU
+		{0}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0}.Debug|x86.Build.0 = Debug|Any CPU
+		{0}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0}.Release|ARM.Build.0 = Release|Any CPU
+		{0}.Release|ARM.Deploy.0 = Release|Any CPU
+		{0}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0}.Release|iPhone.Build.0 = Release|Any CPU
+		{0}.Release|iPhone.Deploy.0 = Release|Any CPU
+		{0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{0}.Release|x64.ActiveCfg = Release|Any CPU
+		{0}.Release|x64.Build.0 = Release|Any CPU
+		{0}.Release|x64.Deploy.0 = Release|Any CPU
+		{0}.Release|x86.ActiveCfg = Release|Any CPU
+		{0}.Release|x86.Build.0 = Release|Any CPU
+		{0}.Release|x86.Deploy.0 = Release|Any CPU
 ";
 
         private const string XplatWasmTemplate = @"		{0}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
@@ -321,7 +407,7 @@ EndProject
 
         public void AddProjectToSolution(string platform, string projectName, string projectGuid, string projectRelativeToSolutionPath, bool isCPSProject)
         {
-            var slnContent = File.ReadAllText(_path);
+            var slnContent = GetSolutionFileContent();
 
             if (slnContent.IndexOf(projectRelativeToSolutionPath, StringComparison.Ordinal) == -1)
             {
@@ -339,7 +425,7 @@ EndProject
                 {
                     var sharedProjInsertPoint = slnContent.IndexOf("GlobalSection(SolutionConfigurationPlatforms) = preSolution", StringComparison.Ordinal);
 
-                    // TODO ML: calculate number of items
+                    // TODO ML: calculate number of items???
                     var sharedItemCount = 13;
 
                     var sharedProjectContent = string.Format(SharedProjectTemplate, projectName, projectGuid, sharedItemCount);
@@ -361,7 +447,7 @@ EndProject
                     }
                 }
 
-                if (isCPSProject)
+                if (platform == Platforms.Uwp && isCPSProject)
                 {
                     slnContent = AddAnyCpuSolutionConfigurations(slnContent);
                     slnContent = AddAnyCpuProjectConfigutations(slnContent);
@@ -376,7 +462,7 @@ EndProject
             var result = new Dictionary<string, string>();
 
             var projectPattern = new Regex(ProjectFilter, RegexOptions.ExplicitCapture | RegexOptions.Singleline);
-            var solutionContent = GetContent();
+            var solutionContent = GetSolutionFileContent();
             var match = projectPattern.Match(solutionContent);
 
             while (match.Success)
@@ -482,21 +568,29 @@ EndProject
             }
             else if (platform == Platforms.Xplat)
             {
-                if (projectName.EndsWith(".Droid.csproj", StringComparison.InvariantCultureIgnoreCase))
+                if (projectName.EndsWith(".Droid", StringComparison.InvariantCultureIgnoreCase))
                 {
                     return XplatDroidTemplate;
                 }
-                else if (projectName.EndsWith(".iOS.csproj", StringComparison.InvariantCultureIgnoreCase))
+                else if (projectName.EndsWith(".Android", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return XplatDroidTemplate;
+                }
+                else if (projectName.EndsWith(".iOS", StringComparison.InvariantCultureIgnoreCase))
                 {
                     return XplatIosTemplate;
                 }
-                else if (projectName.EndsWith(".UWP.csproj", StringComparison.InvariantCultureIgnoreCase))
+                else if (projectName.EndsWith(".UWP", StringComparison.InvariantCultureIgnoreCase))
                 {
                     return XplatUwpTemplate;
                 }
-                if (projectName.EndsWith(".Wasm.csproj", StringComparison.InvariantCultureIgnoreCase))
+                else if (projectName.EndsWith(".Wasm", StringComparison.InvariantCultureIgnoreCase))
                 {
                     return XplatWasmTemplate;
+                }
+                else
+                {
+                    return StdLibTemplate;
                 }
             }
 
@@ -516,20 +610,14 @@ EndProject
             throw new InvalidDataException(nameof(platform));
         }
 
-        private string GetContent()
+        private string GetSolutionFileContent()
         {
             if (!File.Exists(_path))
             {
                 throw new FileNotFoundException(string.Format("Solution file {0} does not exist", _path));
             }
 
-            string solutionContent;
-            using (var reader = new StreamReader(_path))
-            {
-                solutionContent = reader.ReadToEnd();
-            }
-
-            return solutionContent;
+            return File.ReadAllText(_path);
         }
     }
 }

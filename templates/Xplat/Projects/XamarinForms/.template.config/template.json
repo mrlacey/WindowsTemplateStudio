@@ -23,6 +23,10 @@
   "guids": [ "7cf740f7-735f-48ea-8b7b-3ffa4902371c", "be236938-efed-4037-b3f2-70788b43ca20" ],
   "PrimaryOutputs":
   [
+    { "path": "Param_ProjectName.UWP/xts.DefaultProject.UWP.csproj" },
+    { "path": "Param_ProjectName/xts.DefaultProject.csproj" },
+    { "path": "Param_ProjectName.Android/xts.DefaultProject.Android.csproj" },
+    { "path": "Param_ProjectName.iOS/xts.DefaultProject.iOS.csproj" },
   ],
   "symbols":
   {
@@ -69,6 +73,10 @@
       "type": "parameter",
       "replaces": "Param_Platform"
     },
+    "wts.homePageName": {
+      "type":"parameter",
+      "replaces":"Param_HomeName"
+    },
     "copyrightYear": {
         "type": "generated",
         "generator": "now",
@@ -79,5 +87,58 @@
     }
   },
   "postActions": [
+    {
+      "description": "Generate Test Certificate",
+      "manualInstructions": [ ],
+      "actionId": "65057255-BD7B-443C-8180-5D82B9DA9E22",
+      "args": {
+        "files" : "0"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Microsoft.NETCore.UniversalWindowsPlatform",
+        "version" : "6.1.9",
+        "projectPath": "Param_ProjectName.UWP/Param_ProjectName.UWP.csproj"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Xamarin.Forms",
+        "version" : "4.3.0.778476-pre1",
+        "projectPath": "Param_ProjectName.UWP/Param_ProjectName.UWP.csproj"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add nuget package",
+      "manualInstructions": [ ],
+      "actionId": "0B814718-16A3-4F7F-89F1-69C0F9170EAD",
+      "args": {
+        "packageId" : "Xamarin.Essentials",
+        "version" : "1.2.0",
+        "projectPath": "Param_ProjectName.UWP/Param_ProjectName.UWP.csproj"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add reference to the library project",
+      "manualInstructions": [ ],
+      "actionId": "849AAEB8-487D-45B3-94B9-77FA74E83A01",
+      "args": {
+        "fileIndex" : "0",
+        "projectPath": "Param_ProjectName\\Param_ProjectName.csproj",
+        "specifiedPathIsTarget": "true"
+      },
+      "continueOnError": true
+    },
   ]
 }
