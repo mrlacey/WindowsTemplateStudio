@@ -51,7 +51,8 @@ Windows Template Studio approaches UWP app creation using the following attribut
 | [DataGrid](./pages/datagrid.md)  | A page displaying a simple data grid. |
 | [Telerik Data Grid](./pages/telerikdatagrid.md)  | A page displaying a [RadDataGrid control](http://www.telerik.com/universal-windows-platform-ui/grid), powered by [Telerik UI for UWP](http://www.telerik.com/universal-windows-platform-ui) which is available both [commercially](http://www.telerik.com/purchase/universal-windows-platform) and [open source](https://github.com/telerik/UI-For-UWP). A native, rich and powerful rid with unmatched performance. The grid offers advanced UI virtualization, customizable columns, single and multi-column sorting, data editing, selection and filtering.|
 | [Chart](./pages/chart.md)  | A page displaying a [RadChart control](http://www.telerik.com/universal-windows-platform-ui/chart), powered by [Telerik UI for UWP](http://www.telerik.com/universal-windows-platform-ui) which is available both [commercially](http://www.telerik.com/purchase/universal-windows-platform) and [open source](https://github.com/telerik/UI-For-UWP). RadChart control for Windows 10 apps features a rich set of chart series from Bar, Line, Area, Pie, Scatter and Polar charts to different financial series.|
-| [Tabbed](./pages/tabbed.md)  | The tabbed page is used for navigating frequently accessed, distinct content categories. |
+| [TabbedPivot](./pages/tabbed.md)  | The TabbedPivot page is used for navigating frequently accessed, distinct content categories. |
+| [TabView](./pages/tabview.md)  | The tab view page has a TabView control to show contents in different tabs. |
 | [Map](./pages/map.md)  | The map page is based around the Windows Map Control. Code includes adding a Map Icon and getting your location. |
 | [Camera](./pages/camera.md)  | A page for capturing a photo from the camera. Includes handling previewing, mirroring, and orientation.|
 | [Image Gallery](./pages/imagegallery.md)  | A page displaying a image gallery and allows user to navigate between gallery and image detail.|
@@ -75,6 +76,9 @@ Windows Template Studio approaches UWP app creation using the following attribut
 | [Deep Linking](./features/deep-linking.md) | Add the ability to launch and deep link into the app with a custom URI Scheme. |
 | [UserActivity](./features/user-activity.md) | Add the ability to add user activities to the Windows Timeline. |
 | [Web to App link](./features/web-to-app-link.md) | Associate your app with a website so that when someone opens a link to your website it is displayed in the app. |
+| [Command Line Launch](./command-line.md) | Support passing arguments and launching from the command line. |
+| [Multi-Instance](./multi-instance.md) | Launch multiple instances of the app. |
+| [Multi-Instance Advanced](./multi-instance-advanced.md) | Control how multiple instances of the app are launched. |
 
 #### Application Lifecycle
 
@@ -119,6 +123,7 @@ Windows Template Studio approaches UWP app creation using the following attribut
 |--------:|:------------|
 | [HTTP Data Service](./services/http-data-service.md) | Access content over HTTP. |
 | [Web API](./services/web-api.md) | Include ASP.NET Core Web API project. |
+| [Secured Web API](./secured-web-api.md) | Include a ASP.NET Core Web API project that validates a JWToken. |
 | [SQL Server Data](./services/sql-server-data-service.md) | Get data from SQL Server to use in the app. |
 
 #### Authentication (Select one)

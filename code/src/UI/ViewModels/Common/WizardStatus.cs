@@ -26,6 +26,7 @@ namespace Microsoft.Templates.UI.ViewModels.Common
         private bool _isNotBusy;
         private bool _hasValidationErrors;
         private bool _isLoading = true;
+        private string _canNotGenerateProjectsMessage;
         private ICommand _openWebSiteCommand;
         private ICommand _createIssueCommand;
 
@@ -81,6 +82,12 @@ namespace Microsoft.Templates.UI.ViewModels.Common
             }
         }
 
+        public string CanNotGenerateProjectsMessage
+        {
+            get => _canNotGenerateProjectsMessage;
+            set => SetProperty(ref _canNotGenerateProjectsMessage, value);
+        }
+
         public ICommand OpenWebSiteCommand => _openWebSiteCommand ?? (_openWebSiteCommand = new RelayCommand(OnOpenWebSite));
 
         public ICommand CreateIssueCommand => _createIssueCommand ?? (_createIssueCommand = new RelayCommand(OnCreateIssue));
@@ -118,31 +125,28 @@ namespace Microsoft.Templates.UI.ViewModels.Common
         private void OnCreateIssue()
         {
             var vsInfo = GenContext.ToolBox.Shell.GetVSTelemetryInfo();
+
             var sb = new StringBuilder();
-            sb.AppendLine("### For new Features:");
+            sb.AppendLine("**Describe the bug**");
+            sb.AppendLine("A clear and concise description of what the bug is.");
             sb.AppendLine();
-            sb.AppendLine("#### Overview");
+            sb.AppendLine("**To Reproduce**");
+            sb.AppendLine("Steps to reproduce the behavior:");
+            sb.AppendLine("1. Go to '...'");
+            sb.AppendLine("2. Click on '....'");
+            sb.AppendLine("3. Scroll down to '....'");
+            sb.AppendLine("4. See error");
             sb.AppendLine();
-            sb.AppendLine("What you'd think should be added with scenarios");
+            sb.AppendLine("**Expected behavior**");
+            sb.AppendLine("A clear and concise description of what you expected to happen.");
             sb.AppendLine();
-            sb.AppendLine("#### Links");
+            sb.AppendLine("**Screenshots**");
+            sb.AppendLine("If applicable, add screenshots to help explain your problem.");
             sb.AppendLine();
-            sb.AppendLine("### For Bugs:");
+            sb.AppendLine("**Additional context**");
+            sb.AppendLine("Add any other context about the problem here.");
             sb.AppendLine();
-            sb.AppendLine("#### Repro steps");
-            sb.AppendLine();
-            sb.AppendLine("What did you do? How can someone else reproduce this?");
-            sb.AppendLine();
-            sb.AppendLine("#### Expected Behavior");
-            sb.AppendLine();
-            sb.AppendLine("What was expected to happen");
-            sb.AppendLine("(include screenshots if a visual issue)");
-            sb.AppendLine();
-            sb.AppendLine("#### Actual Behavior");
-            sb.AppendLine();
-            sb.AppendLine("What really happened");
-            sb.AppendLine();
-            sb.AppendLine("### System");
+            sb.AppendLine("**System**");
             sb.AppendLine();
             if (!string.IsNullOrEmpty(vsInfo.VisualStudioEdition) && !string.IsNullOrEmpty(vsInfo.VisualStudioExeVersion))
             {

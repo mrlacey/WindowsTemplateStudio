@@ -379,6 +379,11 @@ namespace Microsoft.Templates.Fakes
 		{0}.Release|x86.ActiveCfg = Release|Any CPU
 		{0}.Release|x86.Build.0 = Release|Any CPU
 ";
+        private const string WpfProjectConfigurationTemplate = @"		{0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.Release|Any CPU.Build.0 = Release|Any CPU
+";
 
         private const string ProjectTemplate = @"Project(""{{guid}}"") = ""{name}"", ""{path}"", ""{id}""
 EndProject
@@ -412,7 +417,8 @@ EndProject
             if (slnContent.IndexOf(projectRelativeToSolutionPath, StringComparison.Ordinal) == -1)
             {
                 var globalIndex = slnContent.IndexOf("Global", StringComparison.Ordinal);
-                var projectTypeGuid = GetProjectGuid(projectRelativeToSolutionPath, isCPSProject);
+                var projectTypeGuid = GetProjectGuid(Path.GetExtension(projectRelativeToSolutionPath), isCPSProject);
+                projectGuid = projectGuid.Contains("{") ? projectGuid : "{" + projectGuid + "}";
                 var projectContent = ProjectTemplate
                                             .Replace("{guid}", projectTypeGuid)
                                             .Replace("{name}", projectName)
@@ -555,46 +561,50 @@ EndProject
 
         private static string GetProjectConfigurationTemplate(string platform, string projectName, bool isCPSProject)
         {
-            if (platform == Platforms.Uwp)
+            switch (platform)
             {
-                if (isCPSProject)
-                {
-                    return UwpProjectConfigurationTemplateForAnyCpu;
-                }
-                else
-                {
-                    return UwpProjectConfigurationTemplate;
-                }
-            }
-            else if (platform == Platforms.Xplat)
-            {
-                if (projectName.EndsWith(".Droid", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return XplatDroidTemplate;
-                }
-                else if (projectName.EndsWith(".Android", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return XplatDroidTemplate;
-                }
-                else if (projectName.EndsWith(".iOS", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return XplatIosTemplate;
-                }
-                else if (projectName.EndsWith(".UWP", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return XplatUwpTemplate;
-                }
-                else if (projectName.EndsWith(".Wasm", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return XplatWasmTemplate;
-                }
-                else
-                {
-                    return StdLibTemplate;
-                }
-            }
+                case Platforms.Uwp:
+                    if (isCPSProject)
+                    {
+                        return UwpProjectConfigurationTemplateForAnyCpu;
+                    }
+                    else
+                    {
+                        return UwpProjectConfigurationTemplate;
+                    }
 
-            return string.Empty;
+                case Platforms.Wpf:
+                    return WpfProjectConfigurationTemplate;
+
+                case Platforms.Xplat:
+					if (projectName.EndsWith(".Droid", StringComparison.InvariantCultureIgnoreCase))
+					{
+						return XplatDroidTemplate;
+					}
+					else if (projectName.EndsWith(".Android", StringComparison.InvariantCultureIgnoreCase))
+					{
+						return XplatDroidTemplate;
+					}
+					else if (projectName.EndsWith(".iOS", StringComparison.InvariantCultureIgnoreCase))
+					{
+						return XplatIosTemplate;
+					}
+					else if (projectName.EndsWith(".UWP", StringComparison.InvariantCultureIgnoreCase))
+					{
+						return XplatUwpTemplate;
+					}
+					else if (projectName.EndsWith(".Wasm", StringComparison.InvariantCultureIgnoreCase))
+					{
+						return XplatWasmTemplate;
+					}
+					else
+					{
+						return StdLibTemplate;
+					}
+
+                default:
+                    return string.Empty;
+            }
         }
 
         private static string ReadTemplate(string platform)
@@ -603,6 +613,8 @@ EndProject
             {
                 case Platforms.Uwp:
                     return File.ReadAllText(@"Solution\UwpSolutionTemplate.txt");
+                case Platforms.Wpf:
+                    return File.ReadAllText(@"Solution\WpfSolutionTemplate.txt");
                 case Platforms.Xplat:
                     return File.ReadAllText(@"Solution\XplatSolutionTemplate.txt");
             }

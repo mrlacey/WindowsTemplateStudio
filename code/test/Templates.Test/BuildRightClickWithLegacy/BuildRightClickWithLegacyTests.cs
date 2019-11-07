@@ -3,16 +3,12 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.TemplateEngine.Abstractions;
 using Microsoft.Templates.Core;
 using Microsoft.Templates.Core.Extensions;
 using Microsoft.Templates.Core.Gen;
-using Microsoft.Templates.Core.Helpers;
-using Microsoft.Templates.Fakes;
 using Xunit;
 
 namespace Microsoft.Templates.Test
@@ -22,7 +18,7 @@ namespace Microsoft.Templates.Test
     {
         private readonly string _emptyBackendFramework = string.Empty;
         //TODO: Remove once version 3.5 is released
-        private string[] excludedTemplates = { "wts.Feat.MultiView", "wts.Page.TabView", "wts.Page.TabView.VB", "wts.Page.TreeView", "wts.Page.TreeView.VB" };
+        private string[] excludedTemplates = { "wts.Feat.MultiView", "wts.Feat.MultiView.VB", "wts.Page.TabView", "wts.Page.TabView.VB", "wts.Page.TreeView", "wts.Page.TreeView.VB" };
 
         public BuildRightClickWithLegacyTests(BuildRightClickWithLegacyFixture fixture)
             : base(fixture)
@@ -32,6 +28,7 @@ namespace Microsoft.Templates.Test
         [Theory]
         [MemberData(nameof(BaseGenAndBuildTests.GetProjectTemplatesForBuild), "LegacyFrameworks")]
         [Trait("ExecutionSet", "BuildRightClickWithLegacy")]
+        [Trait("ExecutionSet", "_Full")]
         [Trait("Type", "BuildRightClickLegacy")]
         public async Task BuildEmptyLegacyProjectWithAllRightClickItemsAsync(string projectType, string framework, string platform, string language)
         {
@@ -81,7 +78,7 @@ namespace Microsoft.Templates.Test
             Func<ITemplateInfo, bool> templateSelector =
                 t => t.GetTemplateType().IsItemTemplate()
                 && (t.GetProjectTypeList().Contains(projectType) || t.GetProjectTypeList().Contains(All))
-                && t.GetFrontEndFrameworkList().Contains(framework)
+                && (t.GetFrontEndFrameworkList().Contains(framework) || t.GetFrontEndFrameworkList().Contains(All))
                 && t.GetPlatform() == platform
                 && !t.GetIsHidden();
 

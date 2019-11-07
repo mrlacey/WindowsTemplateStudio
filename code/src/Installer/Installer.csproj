@@ -285,11 +285,16 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>InstalledTemplates</VSIXSubPath>
     </Content>
+    <Content Include="Content\Wpf.CS.Templates.mstx">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>InstalledTemplates</VSIXSubPath>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
     <Content Include="cs-CZ\Extension.vsixlangpack">
       <IncludeInVSIX>true</IncludeInVSIX>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="de-DE\Extension.vsixlangpack">
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -520,6 +525,13 @@
     <ProjectReference Include="..\ProjectTemplates\CSharp.XPlat.Solution\CSharp.XPlat.Solution.csproj">
       <Project>{4811CCE2-43B6-4CCA-962D-F6E1840F00E0}</Project>
       <Name>CSharp.XPlat.Solution</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectTemplates\CSharp.WPF.Solution\CSharp.WPF.Solution\CSharp.WPF.Solution.csproj">
+      <Project>{F8DBFD78-6A5B-41E0-A197-5AAA50C51DCB}</Project>
+      <Name>CSharp.WPF.Solution</Name>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>

@@ -10,12 +10,22 @@
     "summary": "包含導覽窗格 (或「漢堡功能表」) 好讓您在不同頁面之間導覽。"
   },
   {
+    "name": "SplitViewWpf",
+    "displayName": "Navigation Pane",
+    "summary": "A Hamburger Menu is included for navigation between pages."
+  },
+  {
     "name": "TabbedNav",
     "displayName": "Horizontal Navigation Pane",
     "summary": "上方的導覽項目可讓您在不同頁面之間快速導覽。"
   },
   {
     "name": "MenuBar",
+    "displayName": "MenuBar",
+    "summary": "新增一個功能表，好讓您在不同頁面之間移動。"
+  },
+  {
+    "name": "MenuBarWpf",
     "displayName": "MenuBar",
     "summary": "新增一個功能表，好讓您在不同頁面之間移動。"
   }

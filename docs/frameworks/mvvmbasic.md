@@ -41,7 +41,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-You can learn more about Navigation within a project [here](./navigation.md).
+You can learn more about Navigation within a project [here](../navigation.md).
 
 ## ViewModel persistence and lifetime
 
@@ -91,3 +91,7 @@ Then use it anywhere in the app like this.
        ...
    }
 ```
+
+## Snippets
+
+Because MVVM Basic is not a framework, it does not come with some of the additional resources that many Frameworks also provide. To fill some of the gaps, an [extension that provides MVVM Basic specific snippets is available in the Marketplace](https://marketplace.visualstudio.com/items?itemName=MattLaceyLtd.MvvmBasicSnippets). The snippets it provides aim to reduce the amount of code you need to write (or copy and paste) when extending the generated app to add your own functionality.

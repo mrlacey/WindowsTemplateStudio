@@ -331,6 +331,15 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Visual Studio 2017 doesn&apos;t support WPF .NET Core project creation, please use Visual Studio 2019..
+        /// </summary>
+        public static string CanNotGenerateWPFProjectsMessage {
+            get {
+                return ResourceManager.GetString("CanNotGenerateWPFProjectsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do not merge changes (generate in a temp folder)..
         /// </summary>
         public static string ChangesSummaryCheckBoxText {
@@ -750,9 +759,18 @@ namespace Microsoft.Templates.UI.Resources {
         /// <summary>
         ///   Looks up a localized string similar to New Universal Windows Platform app.
         /// </summary>
-        public static string NewProjectTitle {
+        public static string NewProjectTitleUWP {
             get {
-                return ResourceManager.GetString("NewProjectTitle", resourceCulture);
+                return ResourceManager.GetString("NewProjectTitleUWP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New WPF app.
+        /// </summary>
+        public static string NewProjectTitleWPF {
+            get {
+                return ResourceManager.GetString("NewProjectTitleWPF", resourceCulture);
             }
         }
         
@@ -762,6 +780,15 @@ namespace Microsoft.Templates.UI.Resources {
         public static string NoContentPanelMessage {
             get {
                 return ResourceManager.GetString("NoContentPanelMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can not add **{0}** because the following templates are not compatible: {1}..
+        /// </summary>
+        public static string NotificationAdditionError_Exclusion {
+            get {
+                return ResourceManager.GetString("NotificationAdditionError_Exclusion", resourceCulture);
             }
         }
         
@@ -1306,6 +1333,15 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exclusions:.
+        /// </summary>
+        public static string TemplateDetailsExclusions {
+            get {
+                return ResourceManager.GetString("TemplateDetailsExclusions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Frameworks:.
         /// </summary>
         public static string TemplateDetailsFrameworks {
@@ -1338,6 +1374,15 @@ namespace Microsoft.Templates.UI.Resources {
         public static string TemplateDetailsLicenses {
             get {
                 return ResourceManager.GetString("TemplateDetailsLicenses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requirements:.
+        /// </summary>
+        public static string TemplateDetailsRequirements {
+            get {
+                return ResourceManager.GetString("TemplateDetailsRequirements", resourceCulture);
             }
         }
         
@@ -1410,6 +1455,15 @@ namespace Microsoft.Templates.UI.Resources {
         public static string TemplateGroup_Identity {
             get {
                 return ResourceManager.GetString("TemplateGroup_Identity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Packaging.
+        /// </summary>
+        public static string TemplateGroup_Packaging {
+            get {
+                return ResourceManager.GetString("TemplateGroup_Packaging", resourceCulture);
             }
         }
         

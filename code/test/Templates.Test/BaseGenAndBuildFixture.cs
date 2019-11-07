@@ -21,8 +21,8 @@ namespace Microsoft.Templates.Test
 {
     public abstract class BaseGenAndBuildFixture
     {
-        private const string Platform = "x86";
-        private const string Config = "Debug";
+        protected const string All = "all";
+
         private readonly string _emptyBackendFramework = string.Empty;
 
         public abstract string GetTestRunPath();
@@ -94,7 +94,6 @@ namespace Microsoft.Templates.Test
         public void AddItem(UserSelection userSelection, string itemName, TemplateInfo template)
         {
             var selectedTemplate = new UserSelectionItem { Name = itemName, TemplateId = template.TemplateId };
-            userSelection.Add(selectedTemplate, template.TemplateType);
 
             foreach (var item in template.Dependencies)
             {
@@ -103,9 +102,16 @@ namespace Microsoft.Templates.Test
                     AddItem(userSelection, item.DefaultName, item);
                 }
             }
+
+            if (template.Requirements.Count() > 0 && !userSelection.Items.Any(u => template.Requirements.Select(r => r.TemplateId).Contains(u.TemplateId)))
+            {
+                AddItem(userSelection, template.Requirements.FirstOrDefault().DefaultName, template.Requirements.FirstOrDefault());
+            }
+
+            userSelection.Add(selectedTemplate, template.TemplateType);
         }
 
-        public (int exitCode, string outputFile) BuildAppxBundle(string projectName, string outputPath, string projectExtension)
+        public (int exitCode, string outputFile) BuildMsixBundle(string projectName, string outputPath, string projectExtension)
         {
             var outputFile = Path.Combine(outputPath, $"_buildOutput_{projectName}.txt");
 
@@ -134,7 +140,7 @@ namespace Microsoft.Templates.Test
             return (process.ExitCode, outputFile);
         }
 
-        public (int exitCode, string outputFile, string resultFile) RunWackTestOnAppxBundle(string bundleFilePath, string outputPath)
+        public (int exitCode, string outputFile, string resultFile) RunWackTestOnMsixBundle(string bundleFilePath, string outputPath)
         {
             var outputFile = Path.Combine(outputPath, $"_wackOutput_{Path.GetFileName(bundleFilePath)}.txt");
             var resultFile = Path.Combine(outputPath, "_wackresults.xml");
@@ -202,17 +208,27 @@ namespace Microsoft.Templates.Test
             // Build
             var solutionFile = Path.GetFullPath(outputPath + @"\" + solutionName + ".sln");
 
+            var config = "Debug";
             var batFile = "RestoreAndBuild.bat";
+            var buildPlatform = "x86";
+
+
+            if (platform == Platforms.Wpf)
+            {
+                batFile = "RestoreAndBuildWpf.bat";
+                buildPlatform = "Any CPU";
+            }
+
 
             var batPath = Path.GetDirectoryName(GetPath(batFile));
 
             Console.Out.WriteLine();
             Console.Out.WriteLine($"### > Ready to start building");
-            Console.Out.Write($"### > Running following command: {GetPath(batFile)} \"{solutionFile}\" {Platform} {Config}");
+            Console.Out.Write($"### > Running following command: {GetPath(batFile)} \"{solutionFile}\" {buildPlatform} {config}");
 
             var startInfo = new ProcessStartInfo(GetPath(batFile))
             {
-                Arguments = $"\"{solutionFile}\" {Platform} {Config} {batPath}",
+                Arguments = $"\"{solutionFile}\" \"{buildPlatform}\" \"{config}\" \"{batPath}\"",
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = false,
@@ -329,53 +345,53 @@ namespace Microsoft.Templates.Test
 
         public static void SetCurrentPlatform(string platform)
         {
+            GenContext.SetCurrentPlatform(platform);
             var fakeShell = GenContext.ToolBox.Shell as FakeGenShell;
             fakeShell.SetCurrentPlatform(platform);
         }
 
-        protected static IEnumerable<object[]> GetPageAndFeatureTemplates(string frameworkFilter, string language = ProgrammingLanguages.CSharp)
+        protected static IEnumerable<object[]> GetPageAndFeatureTemplates(string frameworkFilter, string language = ProgrammingLanguages.CSharp, string platform = Platforms.Uwp, string excludedItem = "")
         {
             List<object[]> result = new List<object[]>();
 
             SetCurrentLanguage(language);
 
-            foreach (var platform in Platforms.GetAllPlatforms())
+            SetCurrentPlatform(platform);
+
+            var projectTypes = GenContext.ToolBox.Repo.GetProjectTypes(platform)
+                                                        .Where(m => !string.IsNullOrEmpty(m.Description))
+                                                        .Select(m => m.Name);
+
+            foreach (var projectType in projectTypes)
             {
-                SetCurrentPlatform(platform);
+                var targetFrameworks = GenContext.ToolBox.Repo.GetFrontEndFrameworks(platform, projectType)
+                                                                .Where(m => m.Name == frameworkFilter)
+                                                                .Select(m => m.Name).ToList();
 
-                var projectTypes = GenContext.ToolBox.Repo.GetProjectTypes(platform)
-                                                          .Where(m => !string.IsNullOrEmpty(m.Description))
-                                                          .Select(m => m.Name);
-
-                foreach (var projectType in projectTypes)
+                foreach (var framework in targetFrameworks)
                 {
-                    var targetFrameworks = GenContext.ToolBox.Repo.GetFrontEndFrameworks(platform, projectType)
-                                                                  .Where(m => m.Name == frameworkFilter)
-                                                                  .Select(m => m.Name).ToList();
+                    var itemTemplates = GenContext.ToolBox.Repo.GetAll()
+                        .Where(t =>
+                        (t.GetFrontEndFrameworkList().Contains(framework) || t.GetFrontEndFrameworkList().Contains(All))
+                        && t.GetTemplateType().IsItemTemplate()
+                        && t.GetPlatform() == platform
+                        && t.GetLanguage() == language
+                        && t.Identity != excludedItem
+                        && !t.GetIsHidden());
 
-                    foreach (var framework in targetFrameworks)
+                    foreach (var itemTemplate in itemTemplates)
                     {
-                        var itemTemplates = GenContext.ToolBox.Repo.GetAll()
-                            .Where(t => t.GetFrontEndFrameworkList().Contains(framework)
-                            && t.GetTemplateType().IsItemTemplate()
-                            && t.GetPlatform() == platform
-                            && t.GetLanguage() == language
-                            && !t.GetIsHidden());
-
-                        foreach (var itemTemplate in itemTemplates)
+                        result.Add(new object[]
                         {
-                            result.Add(new object[]
-                            {
-                                itemTemplate.Name,
-                                projectType,
-                                framework,
-                                platform,
-                                itemTemplate.Identity,
-                                language,
-                            });
-                        }
+                            itemTemplate.Name,
+                            projectType,
+                            framework,
+                            platform,
+                            itemTemplate.Identity,
+                            language,
+                        });
                     }
-                }
+                }    
             }
 
             return result;

@@ -210,6 +210,11 @@ namespace TemplateValidator
                     case "wts.dependencies":
                         // This value is checked with the TemplateFolderVerifier
                         break;
+                    case "wts.requirements":
+                        // This value is checked with the TemplateFolderVerifier
+                        break;
+                    case "wts.exclusions":
+                    // This value is checked with the TemplateFolderVerifier
                     case "wts.defaultInstance":
                         VerifyWtsDefaultinstanceTagValue(tag, results);
                         break;
