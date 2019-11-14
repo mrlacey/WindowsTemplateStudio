@@ -12,6 +12,7 @@
     </Page.Resources>
 
     <Grid Margin="{StaticResource MediumLeftRightMargin}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
         <StackPanel
             x:Name="ContentArea">
             <TextBlock x:Uid="SettingsPage_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
@@ -64,5 +65,6 @@
                 <HyperlinkButton x:Uid="SettingsPage_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
             </StackPanel>
         </StackPanel>
+        </ScrollViewer>
     </Grid>    
 </Page>
