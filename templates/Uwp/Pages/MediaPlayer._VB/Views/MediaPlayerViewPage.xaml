@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
         <MediaPlayerElement
             x:Name="mpe"
             AreTransportControlsEnabled="True"
@@ -16,5 +17,6 @@
                 <MediaTransportControls IsCompact="False" />
             </MediaPlayerElement.TransportControls>
         </MediaPlayerElement>
+        </ScrollViewer>
     </Grid>
 </Page>
