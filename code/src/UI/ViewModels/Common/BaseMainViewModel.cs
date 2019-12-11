@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Templates.Core;
@@ -71,10 +72,15 @@ namespace Microsoft.Templates.UI.ViewModels.Common
             // Templates generation is not suported in following cases:
             // - WPF Projects from VisualStudio 2017
             var vsInfo = GenContext.ToolBox.Shell.GetVSTelemetryInfo();
-            if (Platform == Platforms.Wpf && vsInfo.VisualStudioExeVersion.StartsWith("15"))
+            if (!string.IsNullOrEmpty(vsInfo.VisualStudioExeVersion))
             {
-                WizardStatus.CanNotGenerateProjectsMessage = StringRes.CanNotGenerateWPFProjectsMessage;
-                return;
+                // VisualStudioExeVersion is Empty on UI Test or VSEmulator execution
+                var version = Version.Parse(vsInfo.VisualStudioExeVersion);
+                if (Platform == Platforms.Wpf && (version.Major < 16 || (version.Major == 16 && version.Minor < 3)))
+                {
+                    WizardStatus.CanNotGenerateProjectsMessage = StringRes.CanNotGenerateWPFProjectsMessage;
+                    return;
+                }
             }
 
             GenContext.ToolBox.Repo.Sync.SyncStatusChanged += OnSyncStatusChanged;
@@ -92,9 +98,6 @@ namespace Microsoft.Templates.UI.ViewModels.Common
 
         private async void OnSyncStatusChanged(object sender, SyncStatusEventArgs args)
         {
-            await SafeThreading.JoinableTaskFactory.SwitchToMainThreadAsync();
-            WizardStatus.SetVersions();
-
             var notification = args.GetNotification();
             if (notification?.Category == Category.TemplatesSync)
             {
@@ -112,6 +115,8 @@ namespace Microsoft.Templates.UI.ViewModels.Common
 
             if (args.Status == SyncStatus.Updated || args.Status == SyncStatus.Ready)
             {
+                WizardStatus.SetVersions();
+
                 await OnTemplatesAvailableAsync();
             }
         }

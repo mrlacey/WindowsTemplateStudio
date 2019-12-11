@@ -143,10 +143,10 @@ namespace Microsoft.Templates.UI.VisualStudio
         {
             try
             {
-              var defaultProject = GetProjectByName(projectName);
+                var defaultProject = GetProjectByName(projectName);
 
-              SetActiveConfigurationAndPlatform(configurationName, platformName, defaultProject);
-              SetStartupProject(defaultProject);
+                SetActiveConfigurationAndPlatform(configurationName, platformName, defaultProject);
+                SetStartupProject(defaultProject);
             }
             catch (Exception ex)
             {
@@ -239,29 +239,6 @@ namespace Microsoft.Templates.UI.VisualStudio
             }
         }
 
-        public override string GetActiveProjectGuid()
-        {
-            return SafeThreading.JoinableTaskFactory.Run(async () =>
-            {
-                await SafeThreading.JoinableTaskFactory.SwitchToMainThreadAsync();
-                var p = GetActiveProject();
-
-                if (p != null)
-                {
-                    var solution = await _vssolution.GetValueAsync();
-                    solution.GetProjectOfUniqueName(p.FullName, out IVsHierarchy hierarchy);
-                    if (hierarchy != null)
-                    {
-                        hierarchy.GetGuidProperty(VSConstants.VSITEMID_ROOT, (int)__VSHPROPID.VSHPROPID_ProjectIDGuid, out Guid projectGuid);
-
-                        return projectGuid.ToString();
-                    }
-                }
-
-                return string.Empty;
-            });
-        }
-
         public override string GetActiveProjectTypeGuids()
         {
             var project = GetActiveProject();
@@ -351,12 +328,12 @@ namespace Microsoft.Templates.UI.VisualStudio
             }
         }
 
-        public override Guid GetVsProjectId()
+        public override Guid GetProjectGuidByName(string projectName)
         {
             return ThreadHelper.JoinableTaskFactory.Run(async () =>
             {
                 await SafeThreading.JoinableTaskFactory.SwitchToMainThreadAsync();
-                var project = GetActiveProject();
+                var project = GetProjectByName(projectName);
                 Guid projectGuid = Guid.Empty;
                 try
                 {
@@ -413,6 +390,25 @@ namespace Microsoft.Templates.UI.VisualStudio
                     }
                 }
             });
+        }
+
+        public override bool GetActiveProjectIsWts()
+        {
+            bool result = false;
+            var activeProjectPath = GetActiveProjectPath();
+            if (!string.IsNullOrEmpty(activeProjectPath))
+            {
+                var metadataFileNames = new List<string>() { "Package.appxmanifest", "WTS.ProjectConfig.xml" };
+                var metadataFile = metadataFileNames.FirstOrDefault(fileName => File.Exists(Path.Combine(activeProjectPath, fileName)));
+                var metadataFilePath = Path.Combine(activeProjectPath, metadataFile);
+                if (File.Exists(metadataFilePath))
+                {
+                    var fileContent = File.ReadAllText(metadataFilePath);
+                    result = fileContent.Contains("genTemplate:Metadata");
+                }
+            }
+
+            return result;
         }
 
         public override bool IsDebuggerEnabled()
@@ -652,27 +648,6 @@ namespace Microsoft.Templates.UI.VisualStudio
                 }
 
                 return string.Empty;
-            });
-        }
-
-        private Project GetProjectByGuid(string projectTypeGuid)
-        {
-            return SafeThreading.JoinableTaskFactory.Run(async () =>
-            {
-                await SafeThreading.JoinableTaskFactory.SwitchToMainThreadAsync();
-                var dte = await _dte.GetValueAsync();
-
-                foreach (var p in dte?.Solution?.Projects?.Cast<Project>())
-                {
-                    var projectGuid = GetProjectTypeGuid(p);
-
-                    if (projectGuid.ToUpperInvariant().Split(';').Contains($"{{{projectTypeGuid}}}"))
-                    {
-                        return p;
-                    }
-                }
-
-                return null;
             });
         }
 

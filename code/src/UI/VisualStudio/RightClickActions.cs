@@ -130,6 +130,11 @@ namespace Microsoft.Templates.UI.VisualStudio
             }
         }
 
+        public bool Visible(TemplateType templateType)
+        {
+            return _shell.GetActiveProjectIsWts() && GenContext.ToolBox.Repo.GetAll().Any(t => t.GetTemplateType() == templateType);
+        }
+
         public bool Visible()
         {
             return _shell.GetActiveProjectIsWts();
@@ -159,13 +164,10 @@ namespace Microsoft.Templates.UI.VisualStudio
             EnsureGenContextInitialized();
             if (GenContext.CurrentLanguage == _shell.GetActiveProjectLanguage())
             {
-                var projectConfig = ProjectConfigInfo.ReadProjectConfiguration();
-                if (projectConfig.Platform == Platforms.Uwp)
-                {
-                    DestinationPath = GenContext.ToolBox.Shell.GetActiveProjectPath();
-                    ProjectName = GenContext.ToolBox.Shell.GetActiveProjectName();
-                    SafeProjectName = GenContext.ToolBox.Shell.GetActiveProjectNamespace();
-                }
+                var projectConfig = ProjectConfigInfoService.ReadProjectConfiguration();
+                DestinationPath = GenContext.ToolBox.Shell.GetActiveProjectPath();
+                ProjectName = GenContext.ToolBox.Shell.GetActiveProjectName();
+                SafeProjectName = GenContext.ToolBox.Shell.GetActiveProjectNamespace();
 
                 GenerationOutputPath = GenContext.GetTempGenerationPath(ProjectName);
                 ProjectInfo = new ProjectInfo();
@@ -216,7 +218,7 @@ namespace Microsoft.Templates.UI.VisualStudio
 
         private static string GetTempGenerationFolder()
         {
-            string projectGuid = _shell.GetVsProjectId().ToString();
+            string projectGuid = _shell.GetProjectGuidByName(GenContext.Current.ProjectName).ToString();
             return Path.Combine(Path.GetTempPath(), Configuration.Current.TempGenerationFolderPath, projectGuid);
         }
 

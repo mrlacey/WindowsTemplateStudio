@@ -331,7 +331,7 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Visual Studio 2017 doesn&apos;t support WPF .NET Core project creation, please use Visual Studio 2019..
+        ///   Looks up a localized string similar to WPF with .NET Core project creation requires Visual Studio 2019 Update 3 or higher..
         /// </summary>
         public static string CanNotGenerateWPFProjectsMessage {
             get {
@@ -937,6 +937,15 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RegEx validation {0} failed..
+        /// </summary>
+        public static string NotificationValidationError_Regex {
+            get {
+                return ResourceManager.GetString("NotificationValidationError_Regex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name is reserved.
         /// </summary>
         public static string NotificationValidationError_ReservedName {
@@ -1531,7 +1540,7 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}projectTypes/updatetonavigationview.md.
+        ///   Looks up a localized string similar to {0}UWP/projectTypes/updatetonavigationview.md.
         /// </summary>
         public static string ValidatorHasHamburgerMenuLink {
             get {
@@ -1585,7 +1594,7 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}frameworks/updatemvvmlightlocator.md.
+        ///   Looks up a localized string similar to {0}UWP/frameworks/updatemvvmlightlocator.md.
         /// </summary>
         public static string ValidatorHasOldMvvmLightLocatorLink {
             get {
@@ -1612,7 +1621,7 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}projectTypes/updatetowinuinavigationview.md.
+        ///   Looks up a localized string similar to {0}UWP/projectTypes/updatetowinuinavigationview.md.
         /// </summary>
         public static string ValidatorHasOldNavigationViewLink {
             get {
@@ -1639,7 +1648,7 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}projectTypes/updatetohorizontalnavview.md.
+        ///   Looks up a localized string similar to {0}UWP/projectTypes/updatetohorizontalnavview.md.
         /// </summary>
         public static string ValidatorHasPivotLink {
             get {

@@ -385,6 +385,38 @@ namespace Microsoft.Templates.Fakes
 		{0}.Release|Any CPU.Build.0 = Release|Any CPU
 ";
 
+        private const string MSIXProjectConfigurationTemplate = @"		{0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0}.Debug|ARM.Build.0 = Debug|ARM
+		{0}.Debug|ARM.Deploy.0 = Debug|ARM
+		{0}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{0}.Debug|ARM64.Build.0 = Debug|ARM64
+		{0}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{0}.Debug|x64.ActiveCfg = Debug|x64
+		{0}.Debug|x64.Build.0 = Debug|x64
+		{0}.Debug|x64.Deploy.0 = Debug|x64
+		{0}.Debug|x86.ActiveCfg = Debug|x86
+		{0}.Debug|x86.Build.0 = Debug|x86
+		{0}.Debug|x86.Deploy.0 = Debug|x86
+		{0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0}.Release|ARM.ActiveCfg = Release|ARM
+		{0}.Release|ARM.Build.0 = Release|ARM
+		{0}.Release|ARM.Deploy.0 = Release|ARM
+		{0}.Release|ARM64.ActiveCfg = Release|ARM64
+		{0}.Release|ARM64.Build.0 = Release|ARM64
+		{0}.Release|ARM64.Deploy.0 = Release|ARM64
+		{0}.Release|x64.ActiveCfg = Release|x64
+		{0}.Release|x64.Build.0 = Release|x64
+		{0}.Release|x64.Deploy.0 = Release|x64
+		{0}.Release|x86.ActiveCfg = Release|x86
+		{0}.Release|x86.Build.0 = Release|x86
+		{0}.Release|x86.Deploy.0 = Release|x86
+";
+
         private const string ProjectTemplate = @"Project(""{{guid}}"") = ""{name}"", ""{path}"", ""{id}""
 EndProject
 ";
@@ -439,6 +471,10 @@ EndProject
                     slnContent = slnContent.Insert(sharedProjInsertPoint, sharedProjectContent);
                 }
                 else
+				{
+				// TODO ML: see if need to add xplat stuff in this call to GetProjectConfigurationTemplate
+                var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, projectRelativeToSolutionPath, isCPSProject);
+                if (!string.IsNullOrEmpty(projectConfigurationTemplate))
                 {
                     var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, isCPSProject);
                     if (!string.IsNullOrEmpty(projectConfigurationTemplate))
@@ -452,6 +488,7 @@ EndProject
                         slnContent = slnContent.Insert(endGobalSectionIndex - 1, projectConfigContent);
                     }
                 }
+				}
 
                 if (platform == Platforms.Uwp && isCPSProject)
                 {
@@ -559,7 +596,7 @@ EndProject
             return string.Empty;
         }
 
-        private static string GetProjectConfigurationTemplate(string platform, string projectName, bool isCPSProject)
+        private static string GetProjectConfigurationTemplate(string platform, string projectName, string projectRelativeToSolutionPath, bool isCPSProject)
         {
             switch (platform)
             {
@@ -574,7 +611,14 @@ EndProject
                     }
 
                 case Platforms.Wpf:
-                    return WpfProjectConfigurationTemplate;
+                    if (projectRelativeToSolutionPath.Contains("wapproj"))
+                    {
+                        return MSIXProjectConfigurationTemplate;
+                    }
+                    else
+                    {
+                        return WpfProjectConfigurationTemplate;
+                    }
 
                 case Platforms.Xplat:
 					if (projectName.EndsWith(".Droid", StringComparison.InvariantCultureIgnoreCase))

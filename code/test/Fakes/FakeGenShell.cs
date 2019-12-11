@@ -140,19 +140,6 @@ namespace Microsoft.Templates.Fakes
             _changeStatus?.Invoke(message);
         }
 
-        public override string GetActiveProjectGuid()
-        {
-            var projectFileName = FindProject(GenContext.Current.DestinationPath);
-
-            if (string.IsNullOrEmpty(projectFileName))
-            {
-                throw new Exception($"There is not project file in {GenContext.Current.DestinationPath}");
-            }
-
-            var msbuildProj = FakeMsBuildProject.Load(projectFileName);
-            return msbuildProj.Guid;
-        }
-
         public override string GetActiveProjectTypeGuids()
         {
             var projectFileName = FindProject(GenContext.Current.DestinationPath);
@@ -231,9 +218,12 @@ namespace Microsoft.Templates.Fakes
         {
         }
 
-        public override Guid GetVsProjectId()
+        public override Guid GetProjectGuidByName(string projectName)
         {
-            Guid.TryParse(GetActiveProjectGuid(), out Guid guid);
+            var projectFileName = FindProject(GenContext.Current.DestinationPath);
+            var msbuildProj = FakeMsBuildProject.Load(projectFileName);
+
+            Guid.TryParse(msbuildProj.Guid, out Guid guid);
             return guid;
         }
 
@@ -327,6 +317,11 @@ namespace Microsoft.Templates.Fakes
 
         public override void SafeTrackWizardCancelledVsTelemetry(Dictionary<string, string> properties, bool success = true)
         {
+        }
+
+        public override bool GetActiveProjectIsWts()
+        {
+            return true;
         }
     }
 }

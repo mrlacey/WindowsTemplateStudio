@@ -17,6 +17,8 @@ using Xunit;
 using Microsoft.Templates.Fakes;
 using Microsoft.Templates.Core.Helpers;
 using Microsoft.Templates.Core.Extensions;
+using Microsoft.Templates.Core.Naming;
+using Microsoft.Templates.UI.Services;
 
 namespace Microsoft.Templates.Test
 {
@@ -59,10 +61,16 @@ namespace Microsoft.Templates.Test
                     return "B";
                 case "SplitView":
                     return "SV";
+                case "SplitViewWpf":
+                    return "SVWpf";
                 case "TabbedNav":
                     return "TN";
                 case "MenuBar":
                     return "MB";
+                case "MenuBarWpf":
+                    return "MBWpf";
+                case "Ribbon":
+                    return "RB";
                 default:
                     return projectType;
             }
@@ -180,7 +188,7 @@ namespace Microsoft.Templates.Test
 
         protected void AssertCorrectProjectConfigInfo(string expectedProjectType, string expectedFramework, string expectedPlatform)
         {
-            var info = ProjectConfigInfo.ReadProjectConfiguration();
+            var info = ProjectConfigInfoService.ReadProjectConfiguration();
 
             Assert.Equal(expectedProjectType, info.ProjectType);
             Assert.Equal(expectedFramework, info.Framework);
@@ -338,16 +346,12 @@ namespace Microsoft.Templates.Test
 
             var itemTemplate = _fixture.Templates().FirstOrDefault(t => t.Identity == itemId);
             var finalName = itemTemplate.GetDefaultName();
-            var validators = new List<Validator>
-            {
-                new ReservedNamesValidator(),
-            };
+
             if (itemTemplate.GetItemNameEditable())
             {
-                validators.Add(new DefaultNamesValidator());
+                var nameValidationService = new ItemNameService(GenContext.ToolBox.Repo.ItemNameValidationConfig, () => new string[] { });
+                finalName = nameValidationService.Infer(finalName);
             }
-
-            finalName = Naming.Infer(finalName, validators);
 
             var projectName = $"{ShortProjectType(projectType)}{finalName}{ShortLanguageName(language)}";
             var destinationPath = Path.Combine(_fixture.TestProjectsPath, projectName, projectName);
