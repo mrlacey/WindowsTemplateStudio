@@ -471,12 +471,8 @@ EndProject
                     slnContent = slnContent.Insert(sharedProjInsertPoint, sharedProjectContent);
                 }
                 else
-				{
-				// TODO ML: see if need to add xplat stuff in this call to GetProjectConfigurationTemplate
-                var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, projectRelativeToSolutionPath, isCPSProject);
-                if (!string.IsNullOrEmpty(projectConfigurationTemplate))
                 {
-                    var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, isCPSProject);
+                    var projectConfigurationTemplate = GetProjectConfigurationTemplate(platform, projectName, projectRelativeToSolutionPath, isCPSProject);
                     if (!string.IsNullOrEmpty(projectConfigurationTemplate))
                     {
                         var globalSectionIndex = slnContent.IndexOf(ProjectConfigurationPlatformsText, StringComparison.Ordinal);
@@ -488,7 +484,6 @@ EndProject
                         slnContent = slnContent.Insert(endGobalSectionIndex - 1, projectConfigContent);
                     }
                 }
-				}
 
                 if (platform == Platforms.Uwp && isCPSProject)
                 {
@@ -621,30 +616,30 @@ EndProject
                     }
 
                 case Platforms.Xplat:
-					if (projectName.EndsWith(".Droid", StringComparison.InvariantCultureIgnoreCase))
-					{
-						return XplatDroidTemplate;
-					}
-					else if (projectName.EndsWith(".Android", StringComparison.InvariantCultureIgnoreCase))
-					{
-						return XplatDroidTemplate;
-					}
-					else if (projectName.EndsWith(".iOS", StringComparison.InvariantCultureIgnoreCase))
-					{
-						return XplatIosTemplate;
-					}
-					else if (projectName.EndsWith(".UWP", StringComparison.InvariantCultureIgnoreCase))
-					{
-						return XplatUwpTemplate;
-					}
-					else if (projectName.EndsWith(".Wasm", StringComparison.InvariantCultureIgnoreCase))
-					{
-						return XplatWasmTemplate;
-					}
-					else
-					{
-						return StdLibTemplate;
-					}
+                    if (projectName.EndsWith(".Droid", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return XplatDroidTemplate;
+                    }
+                    else if (projectName.EndsWith(".Android", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return XplatDroidTemplate;
+                    }
+                    else if (projectName.EndsWith(".iOS", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return XplatIosTemplate;
+                    }
+                    else if (projectName.EndsWith(".UWP", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return XplatUwpTemplate;
+                    }
+                    else if (projectName.EndsWith(".Wasm", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return XplatWasmTemplate;
+                    }
+                    else
+                    {
+                        return StdLibTemplate;
+                    }
 
                 default:
                     return string.Empty;
