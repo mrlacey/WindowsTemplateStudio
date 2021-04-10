@@ -12,9 +12,9 @@ body:
   attributes:
     label: To Reproduce
     description: "Steps to reproduce the behavior:"
-    value: "1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
+    value: "1. Go to '...'\n
+2. Click on '....'\n
+3. Scroll down to '....'\n
 4. See error"
 - type: textarea
   attributes:
@@ -34,7 +34,7 @@ body:
   attributes:
     label: About your setup
     description: Please provide the following to help 
-    value: "- VS Version:  
-- WinTS Wizard Version: 
-- WinTS Template Version: 
+    value: "- VS Version:  \n
+- WinTS Wizard Version: \n
+- WinTS Template Version: \n
 - Windows Build: "
