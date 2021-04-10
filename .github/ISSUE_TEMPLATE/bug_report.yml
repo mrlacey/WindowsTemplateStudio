@@ -11,7 +11,7 @@ body:
 - type: textarea
   attributes:
     label: To Reproduce
-    description: Steps to reproduce the behavior:
+    description: "Steps to reproduce the behavior:"
     value: "1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
@@ -24,7 +24,7 @@ body:
 - type: checkboxes
   id: platforms
   attributes:
-    label: Applies to the following platforms:
+    label: "Applies to the following platforms:"
     options:
     - label: UWP
     - label: WPF
