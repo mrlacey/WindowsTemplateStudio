@@ -2,13 +2,31 @@
 
 We're looking into adding WinUI 3 App templates to Windows Template Studio.
 
-Our templates for WinUI 3 Apps are currently in preview as WinUI3 itself. You can try them out in our [dev-nightly version](./../getting-started-extension.md#nightly--pre-release-feeds-for-windows-template-studio).
+Our templates for WinUI 3 Apps are currently in preview. You can try them out in our [dev-nightly version](./../getting-started-extension.md#nightly--pre-release-feeds-for-windows-template-studio).
 
-We currently provide templates for: 
-- WinUI 3 Desktop App (C#)
-- WinUI 3 Uwp App (C#)
-- WinUI 3 Desktop App (C++)
-- WinUI 3 Uwp App (C++)
+We currently provide the following project templates:
+
+C# templates:
+- App (WinUI 3 Desktop) 
+- Class Library (WinUI 3 in Desktop) 
+
+- App (WinUI 3 UWP) PREVIEW
+- Class Library (WinUI 3 in UWP) PREVIEW
+- Windows Runtime Component (WinUI 3 in UWP) PREVIEW
+
+C++ Templates:
+- App (WinUI 3 Desktop) 
+- Windows Runtime Component (WinUI 3) 
+
+- App (WinUI 3 UWP) PREVIEW
+
+We also offer the following item templates:
+- Blank page
+- Blank Window (desktop)
+- Custom Control
+- Resource Dictionary
+- Resources File
+- User Control
 
 We would love to get your feedback on our [tracking issues for WinUI3 templates](https://github.com/microsoft/WindowsTemplateStudio/issues?q=is%3Aopen+is%3Aissue+label%3Afeature+milestone%3AWinUI3).
 
@@ -38,20 +56,13 @@ If you miss anything or find an issue that is not mentioned in the known issues 
 
 4. Make sure your system has a NuGet package source enabled for **nuget.org**. For more information, see [Common NuGet configurations](https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior)
 
-5. Add a new Package source to the Windows Community DevOps feed: 
-   - Go to Tools -> NuGet Package Manager -> Package Manager Settings -> Package Sources
-   - Add a new Package Source for https://pkgs.dev.azure.com/dotnet/WindowsCommunityToolkit/_packaging/WindowsCommunityToolkit-WinUI3/nuget/v3/index.json
-   - Confirm by clicking update, then Ok
-
-
 ### Known issues:
 - [Dark/Light theme issue](https://github.com/microsoft/WindowsTemplateStudio/issues/4087)
 - [VisualStateManager initialization issue](https://github.com/microsoft/WindowsTemplateStudio/issues/4072)
-- [WinUI 3 ListDetailsView does not work as expected](https://github.com/microsoft/WindowsTemplateStudio/issues/4160)
-- [WinUI 3 NavigationView does not apply correct styles](https://github.com/microsoft/WindowsTemplateStudio/issues/4159)
 
 ### Additional docs:
-- [Windows UI Library 3 - Project Reunion 0.5 Preview (March 2021)](https://docs.microsoft.com/windows/apps/winui/winui3/)
+- [Windows UI Library 3 - Project Reunion 0.5 (March 2021)](https://docs.microsoft.com/windows/apps/winui/winui3/)
 - [Windows UI Library on GitHub](https://github.com/Microsoft/microsoft-ui-xaml)
 - [Project Reunion on GitHub](https://github.com/microsoft/ProjectReunion)
-- [Windows Community Toolkit 8.0.0-preview5 for Project Reunion 0.5 Preview](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues/3295)
+- [Windows Community Toolkit for Project Reunion 0.5](https://devblogs.microsoft.com/ifdef-windows/windows-community-toolkit-for-project-reunion-0-5/)
+- [Update existing projects to the latest release of Project Reunion](https://docs.microsoft.com/windows/apps/project-reunion/update-existing-projects-to-the-latest-release)
