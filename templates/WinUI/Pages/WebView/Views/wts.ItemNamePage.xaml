@@ -4,8 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:behaviors="using:Param_RootNamespace.Behaviors"
-    behaviors:NavigationViewHeaderBehavior.HeaderMode="Minimal"
     mc:Ignorable="d"
     Style="{StaticResource PageStyle}">
 
@@ -14,10 +12,6 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <!--
-        Microsoft.UI.Xaml.Controls.WebView2 is for evaluation purposes only and is subject to change or removal in future updates.
-        See more info https://docs.microsoft.com/en-us/microsoft-edge/webview2/
-        -->
         <WebView2
             x:Name="webView"
             Source="{x:Bind ViewModel.Source, Mode=OneWay}" />

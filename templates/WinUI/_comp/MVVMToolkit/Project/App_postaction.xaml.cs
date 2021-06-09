@@ -1,6 +1,6 @@
 ﻿//{[{
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Param_RootNamespace.Activation;
 using Param_RootNamespace.Contracts.Services;
 using Param_RootNamespace.Services;
@@ -53,9 +53,6 @@ namespace Param_RootNamespace
             // Core Services
 
             // Views and ViewModels
-            services.AddTransient<ShellPage>();
-            services.AddTransient<ShellViewModel>();
-
             return services.BuildServiceProvider();
         }
 //}]}
