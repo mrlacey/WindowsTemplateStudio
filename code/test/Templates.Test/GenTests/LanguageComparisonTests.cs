@@ -234,8 +234,8 @@ namespace Microsoft.Templates.Test
                 {
                     for (int j = 0; j < vbCommentLines.Count(); j++)
                     {
-                        var vbComment = vbCommentLines[j].TrimStart(' ', '\'').Replace(".vb.md", ".md"); // Allow for language specific doc files
-                        var csComment = csCommentLines[j].TrimStart(' ', '/');
+                        var vbComment = vbCommentLines[j].TrimStart(' ', '\'').Replace(".vb.md", ".md").Replace(".vb", string.Empty); // Allow for language specific doc files and file endings
+                        var csComment = csCommentLines[j].TrimStart(' ', '/').Replace(".cs", string.Empty);
 
                         var commentsMatch = CommentsMatchOrAreEquivalent(vbComment, csComment);
 
@@ -329,7 +329,7 @@ namespace Microsoft.Templates.Test
                 {
                     foreach (var modifier in field.Modifiers)
                     {
-                        if (modifier.ValueText.Equals("const"))
+                        if (modifier.ValueText.Equals("const", StringComparison.Ordinal))
                         {
                             var constName = field.Declaration.Variables[0].Identifier.ToString();
                             var constValue = field.Declaration.Variables[0].Initializer.Value.ToString();
@@ -352,7 +352,7 @@ namespace Microsoft.Templates.Test
                 {
                     foreach (var modifier in field.Modifiers)
                     {
-                        if (modifier.ValueText.Equals("Const"))
+                        if (modifier.ValueText.Equals("Const", StringComparison.Ordinal))
                         {
                             var constName = field.Declarators[0].Names[0].ToString();
                             var constValue = field.Declarators[0].Initializer.Value.ToString();

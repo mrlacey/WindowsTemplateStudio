@@ -895,27 +895,33 @@ Lütfen projenizin kodunun gerektirdiği aşağıdaki paket listesini doğrulay�
     <comment>Has ActivationService before Identity link documentation message</comment>
   </data>
   <data name="NewProjectTitleWinUIDesktop" xml:space="preserve">
-    <value>New WinUI3 Desktop app</value>
+    <value>Yeni WinUI3 Masaüstü uygulaması</value>
   </data>
   <data name="NewProjectTitleWinUIUWP" xml:space="preserve">
-    <value>New WinUI3 UWP app</value>
+    <value>Yeni WinUI3 UWP uygulaması</value>
   </data>
   <data name="WinUI" xml:space="preserve">
     <value>Windows UI</value>
   </data>
-  <data name="Flag_Deprecated" xml:space="preserve">
-    <value>DEPRECATED</value>
+  <data name="DeprecatedMessage" xml:space="preserve">
+    <value>Kullanımdan kaldırıldı</value>
     <comment>Text used to indicate a deprecated option in the wizard</comment>
   </data>
   <data name="ErrorUnableToOpenProjectOverview" xml:space="preserve">
-    <value>Could not open project overview.</value>
+    <value>Projeye genel bakış açılamadı.</value>
     <comment>Error message for unable to open project overview dialog</comment>
   </data>
   <data name="ProjectConfigurationSelectAppModel" xml:space="preserve">
-    <value>Select AppModel</value>
+    <value>AppModel'i seçin</value>
   </data>
   <data name="InfoDialogInvalidVSVersion" xml:space="preserve">
-    <value>{0} project creation requires Visual Studio 2019 Version {1} or higher.</value>
+    <value>{0} proje oluşturma visual studio 2019 sürüm {1} veya daha yüksek gerektirir.</value>
     <comment>Error message for Invalid VS Version</comment>
+  </data>
+  <data name="ButtonMaximize" xml:space="preserve">
+    <value>Ekranı Kapla</value>
+  </data>
+  <data name="ButtonRestore" xml:space="preserve">
+    <value>Geri yüklemek</value>
   </data>
 </root>

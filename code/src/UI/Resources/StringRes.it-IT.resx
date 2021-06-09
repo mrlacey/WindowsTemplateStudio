@@ -895,27 +895,33 @@ Verifica il seguente elenco di pacchetti necessario al codice del progetto e agg
     <comment>Has ActivationService before Identity link documentation message</comment>
   </data>
   <data name="NewProjectTitleWinUIDesktop" xml:space="preserve">
-    <value>New WinUI3 Desktop app</value>
+    <value>Nuova app WinUI3 Desktop</value>
   </data>
   <data name="NewProjectTitleWinUIUWP" xml:space="preserve">
-    <value>New WinUI3 UWP app</value>
+    <value>Nuova app WinUI3 UWP</value>
   </data>
   <data name="WinUI" xml:space="preserve">
     <value>Windows UI</value>
   </data>
-  <data name="Flag_Deprecated" xml:space="preserve">
-    <value>DEPRECATED</value>
+  <data name="DeprecatedMessage" xml:space="preserve">
+    <value>Deprecato</value>
     <comment>Text used to indicate a deprecated option in the wizard</comment>
   </data>
   <data name="ErrorUnableToOpenProjectOverview" xml:space="preserve">
-    <value>Could not open project overview.</value>
+    <value>Impossibile aprire la panoramica del progetto.</value>
     <comment>Error message for unable to open project overview dialog</comment>
   </data>
   <data name="ProjectConfigurationSelectAppModel" xml:space="preserve">
-    <value>Select AppModel</value>
+    <value>Seleziona AppModel</value>
   </data>
   <data name="InfoDialogInvalidVSVersion" xml:space="preserve">
-    <value>{0} project creation requires Visual Studio 2019 Version {1} or higher.</value>
+    <value>{0} creazione di progetti richiede che la versione di Visual Studio 2019 {1} o superiore.</value>
     <comment>Error message for Invalid VS Version</comment>
+  </data>
+  <data name="ButtonMaximize" xml:space="preserve">
+    <value>Massimizzare</value>
+  </data>
+  <data name="ButtonRestore" xml:space="preserve">
+    <value>Restaurare</value>
   </data>
 </root>

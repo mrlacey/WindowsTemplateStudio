@@ -43,7 +43,16 @@ namespace Microsoft.Templates.Test
 
         protected static string ShortLanguageName(string language)
         {
-            return language == ProgrammingLanguages.CSharp ? "CS" : "VB";
+            switch (language)
+            {
+                case ProgrammingLanguages.VisualBasic:
+                    return "VB";
+                case ProgrammingLanguages.Cpp:
+                    return "CPP";
+                case ProgrammingLanguages.CSharp:
+                default:
+                    return "CS";
+            }
         }
 
         // Used to create names that include a number of characters that are valid in project names but have the potential to cause issues
@@ -506,7 +515,7 @@ namespace Microsoft.Templates.Test
             foreach (var identity in genIdentitiesList)
             {
                 var itemTemplate = _fixture.Templates().FirstOrDefault(t
-                    => (t.Identity.StartsWith($"{identity}.") || t.Identity.Equals(identity))
+                    => (t.Identity.StartsWith($"{identity}.", StringComparison.Ordinal) || t.Identity.Equals(identity, StringComparison.Ordinal))
                     && (t.GetProjectTypeList().Contains(projectType) || t.GetProjectTypeList().Contains(All))
                     && (t.GetFrontEndFrameworkList().Contains(framework) || t.GetFrontEndFrameworkList().Contains(All)));
 
@@ -573,7 +582,7 @@ namespace Microsoft.Templates.Test
             foreach (var identity in genIdentitiesList)
             {
                 var itemTemplate = _fixture.Templates().FirstOrDefault(t
-                    => (t.Identity.StartsWith($"{identity}.") || t.Identity.Equals(identity))
+                    => (t.Identity.StartsWith($"{identity}.", StringComparison.Ordinal) || t.Identity.Equals(identity, StringComparison.Ordinal))
                     && (t.GetProjectTypeList().Contains(projectType) || t.GetProjectTypeList().Contains(All))
                     && (t.GetFrontEndFrameworkList().Contains(framework) || t.GetFrontEndFrameworkList().Contains(All)));
 
@@ -634,31 +643,17 @@ namespace Microsoft.Templates.Test
             switch (framework)
             {
                 case Frameworks.CodeBehind:
-                    result = BuildTemplatesTestFixture.GetProjectTemplates(framework, programmingLanguage, platform);
-                    break;
-
+                case Frameworks.None:
                 case Frameworks.MVVMBasic:
-                    result = BuildTemplatesTestFixture.GetProjectTemplates(framework, programmingLanguage, platform);
-                    break;
-
                 case Frameworks.MVVMLight:
-                    result = BuildTemplatesTestFixture.GetProjectTemplates(framework, programmingLanguage, platform);
-                    break;
-
                 case Frameworks.MVVMToolkit:
-                    result = BuildTemplatesTestFixture.GetProjectTemplates(framework, programmingLanguage, platform);
-                    break;
-
                 case Frameworks.CaliburnMicro:
+                case Frameworks.Prism:
                     result = BuildTemplatesTestFixture.GetProjectTemplates(framework, programmingLanguage, platform);
                     break;
 
                 case "LegacyFrameworks":
                     result = BuildRightClickWithLegacyFixture.GetProjectTemplates(platform, programmingLanguage);
-                    break;
-
-                case Frameworks.Prism:
-                    result = BuildTemplatesTestFixture.GetProjectTemplates(framework, programmingLanguage, platform);
                     break;
 
                 default:

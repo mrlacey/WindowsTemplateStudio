@@ -277,6 +277,15 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximize.
+        /// </summary>
+        public static string ButtonMaximize {
+            get {
+                return ResourceManager.GetString("ButtonMaximize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string ButtonNext {
@@ -318,6 +327,15 @@ namespace Microsoft.Templates.UI.Resources {
         public static string ButtonRemove {
             get {
                 return ResourceManager.GetString("ButtonRemove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        public static string ButtonRestore {
+            get {
+                return ResourceManager.GetString("ButtonRestore", resourceCulture);
             }
         }
         
@@ -457,6 +475,15 @@ namespace Microsoft.Templates.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deprecated.
+        /// </summary>
+        public static string DeprecatedMessage {
+            get {
+                return ResourceManager.GetString("DeprecatedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error adding items to project {0}.
         /// </summary>
         public static string ErrorAddingItemsToProject {
@@ -591,15 +618,6 @@ namespace Microsoft.Templates.UI.Resources {
         public static string ExternalHyperlinkTooltipMessage {
             get {
                 return ResourceManager.GetString("ExternalHyperlinkTooltipMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DEPRECATED.
-        /// </summary>
-        public static string Flag_Deprecated {
-            get {
-                return ResourceManager.GetString("Flag_Deprecated", resourceCulture);
             }
         }
         
